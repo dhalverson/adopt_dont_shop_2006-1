@@ -23,8 +23,7 @@ RSpec.describe "As a visitor", type: :feature do
 
     visit '/shelters'
     
-    expect(page).to have_content(@shelter1.name)
-    expect(page).to have_content(@shelter2.name)
-  
+    expect(page).to have_content(@shelter_1.name)
+    expect(page).to have_content(@shelter_2.name)
   end
 end
