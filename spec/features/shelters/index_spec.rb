@@ -26,4 +26,23 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_content(@shelter_1.name)
     expect(page).to have_content(@shelter_2.name)
   end
+  
+  it "When I visit /shelters/:id I see all information pertaining to this shelter" do
+
+    visit "/shelters/#{@shelter_1.id}"
+    
+    expect(page).to have_content(@shelter_1.name)
+    expect(page).to have_content(@shelter_1.address)
+    expect(page).to have_content(@shelter_1.city)
+    expect(page).to have_content(@shelter_1.state)
+    expect(page).to have_content(@shelter_1.zip)
+    
+    visit "/shelters/#{@shelter_2.id}"
+    
+    expect(page).to have_content(@shelter_2.name)
+    expect(page).to have_content(@shelter_2.address)
+    expect(page).to have_content(@shelter_2.city)
+    expect(page).to have_content(@shelter_2.state)
+    expect(page).to have_content(@shelter_2.zip)
+  end
 end
