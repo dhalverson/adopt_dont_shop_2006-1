@@ -50,8 +50,10 @@ RSpec.describe "As a visitor", type: :feature do
 
     visit "/shelters"
     
-    expect(page).to have_content("New Shelter")
-
+    expect(page).to have_link("New Shelter")
+    expect(page).to_not have_content('The New Shelter')
+    expect(Shelter.last.name).to_not eq("The New Shelter")
+    
     click_link 'New Shelter'
 
     expect(current_path).to eq('/shelters/new')
@@ -65,6 +67,7 @@ RSpec.describe "As a visitor", type: :feature do
     click_on 'Create Shelter'
 
     expect(current_path).to eq("/shelters")
+    expect(Shelter.last.name).to eq("The New Shelter")
     expect(page).to have_content('The New Shelter')
   end
   
