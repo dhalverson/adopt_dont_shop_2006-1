@@ -45,4 +45,27 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_content(@shelter_2.state)
     expect(page).to have_content(@shelter_2.zip)
   end
+  
+  it "When I visit /shelters, there is a link that takes me to a form to create a new shelter" do
+
+    visit "/shelters"
+    
+    expect(page).to have_content("New Shelter")
+
+    click_link 'New Shelter'
+
+    expect(current_path).to eq('/shelters/new')
+
+    fill_in 'Name', with: 'The New Shelter'
+    fill_in 'Address', with: '12 Main St.'
+    fill_in 'City', with: 'Conifer'
+    fill_in 'State', with: 'CO'
+    fill_in 'Zip', with: '80423'
+    
+    click_on 'Create Shelter'
+
+    expect(current_path).to eq("/shelters")
+    expect(page).to have_content('The New Shelter')
+  end
+  
 end
