@@ -19,11 +19,18 @@ RSpec.describe "As a visitor", type: :feature do
             })
   end
   
-  it "When I visit /shelters I see the name of each shelter in the system" do
+  it "When I visit /shelters/:id I see all information pertaining to this shelter" do
 
-    visit '/shelters'
+    visit "/shelters/#{@shelter_1.id}"
+
+    expect(Shelter.first.name).to eq("Primary Shelter")
+  
+    expect(page).to have_link("Delete Shelter")
     
-    expect(page).to have_content(@shelter_1.name)
-    expect(page).to have_content(@shelter_2.name)
+    click_link "Delete Shelter"
+
+    expect(current_path).to eq("/shelters")
+    
+    expect(Shelter.first.name).to eq("Secondary Shelter")
   end
 end
