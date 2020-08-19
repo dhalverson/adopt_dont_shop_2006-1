@@ -1,0 +1,14 @@
+
+<hr/>
+<% @pets.each do |pet|%>
+  <p><img src= <%= pet.image %>></p>
+  <br>
+  <p><%= pet.name %></p>
+  <br>
+  <p><%= pet.age %></p>
+  <br>
+  <p><%= pet.sex %></p>
+  <br>
+  <p><%= pet.shelter_id.name %></p>
+  <br><hr/>
+<% end %>
