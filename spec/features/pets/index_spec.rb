@@ -14,7 +14,7 @@ RSpec.describe "As a visitor", type: :feature do
     @pet_1 = Pet.create(
               image: "/app/assets/images/dog_placeholder.png",
               name: "Bailey",
-              approximate_age: "3",
+              age: "3",
               sex: "Female",
               shelter_id: @shelter_1
               )
@@ -23,7 +23,7 @@ RSpec.describe "As a visitor", type: :feature do
   it "When I visit /pets I see the name of each pet in the system along with all information" do
 
     visit '/pets'
-    
+    save_and_open_page
     expect(page).to have_css("img[src*='#{@pet_1.image}']")
     expect(page).to have_content(@pet_1.name)
     expect(page).to have_content(@pet_1.age)
