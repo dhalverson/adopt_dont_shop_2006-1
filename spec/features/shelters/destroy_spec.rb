@@ -23,7 +23,7 @@ RSpec.describe "As a visitor", type: :feature do
 
     visit "/shelters/#{@shelter_1.id}"
 
-    expect(@shelter_1.nil?).to eq(false)
+    expect(Shelter.first.name).to eq("Primary Shelter")
   
     expect(page).to have_link("Delete Shelter")
     
@@ -31,6 +31,6 @@ RSpec.describe "As a visitor", type: :feature do
 
     expect(current_path).to eq("/shelters")
     
-    expect(@shelter_1.nil?).to eq(true)
+    expect(Shelter.first.name).to eq("Secondary Shelter")
   end
 end
