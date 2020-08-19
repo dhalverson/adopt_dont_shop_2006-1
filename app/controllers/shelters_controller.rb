@@ -24,6 +24,22 @@ class SheltersController < ApplicationController
     end
   end
   
+  def edit
+    @shelter = Shelter.find(params[:id])
+  end
+  
+  def update
+    @shelter = Shelter.find(params[:id])
+    @shelter.update(shelter_params)
+    if @shelter.save
+      # flash[:success] = "Information successfully updated."
+      redirect_to "/shelters/#{@shelter.id}"
+    else
+      # flash[:error] = current_user.errors.full_messages.uniq.to_sentence
+      redirect_to "/shelters/#{@shelter.id}/edit"
+    end
+  end
+  
   private
   
   def shelter_params
