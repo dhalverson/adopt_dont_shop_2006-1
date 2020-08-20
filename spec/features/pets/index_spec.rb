@@ -12,7 +12,7 @@ RSpec.describe "As a visitor", type: :feature do
             })
             
     @pet_1 = Pet.create(
-              image: "/app/assets/images/dog_placeholder.png",
+              image: "https://allaboutshepherds.com/wp-content/uploads/2016/05/gsd-canoe.jpg",
               name: "Bailey",
               age: "3",
               sex: "Female",
