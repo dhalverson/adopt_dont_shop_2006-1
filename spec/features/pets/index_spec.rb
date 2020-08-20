@@ -16,15 +16,14 @@ RSpec.describe "As a visitor", type: :feature do
               name: "Bailey",
               age: "3",
               sex: "Female",
-              shelter_id: @shelter_1
+              shelter_id: @shelter_1.id
               )
   end
   
   it "When I visit /pets I see the name of each pet in the system along with all information" do
 
     visit '/pets'
-    save_and_open_page
-    expect(page).to have_css("img[src*='#{@pet_1.image}']")
+
     expect(page).to have_content(@pet_1.name)
     expect(page).to have_content(@pet_1.age)
     expect(page).to have_content(@pet_1.sex)
