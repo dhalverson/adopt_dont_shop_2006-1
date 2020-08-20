@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "As a visitor", type: :feature do
   
   before(:each) do
-    @shelter_1 = Shelter.create({
+    @shelter_1 = Shelter.create!({
             name: "Primary Shelter",
             address: "123 Maple Ave.",
             city: "Denver",
