@@ -1,0 +1,14 @@
+
+<hr/>
+<% @pets.each do |pet|%>
+  <%= image_tag(pet.image, alt: "pet picture", method: :get, class: 'pet-image') %>
+  <br>
+  <p><%= pet.name %></p>
+  <br>
+  <p><%= pet.age %></p>
+  <br>
+  <p><%= pet.sex %></p>
+  <br>
+  <p><%= pet.shelter.name %></p>
+  <br><hr/>
+<% end %>
