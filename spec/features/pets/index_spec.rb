@@ -11,12 +11,11 @@ RSpec.describe "As a visitor", type: :feature do
             zip: "80438"
             })
             
-    @pet_1 = Pet.create(
-              image: "/app/assets/images/dog_placeholder.png",
+    @pet_1 = @shelter_1.pets.create!(
+              image: "https://allaboutshepherds.com/wp-content/uploads/2016/05/gsd-canoe.jpg",
               name: "Bailey",
               age: "3",
-              sex: "Female",
-              shelter_id: @shelter_1.id
+              sex: "Female"
               )
   end
   
