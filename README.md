@@ -125,7 +125,7 @@ Then I see each Pet that can be adopted from that Shelter with that shelter_id i
 - sex
 
 
-[ ] done
+[x] done
 
 ## User Story 9, Pet Show
 
