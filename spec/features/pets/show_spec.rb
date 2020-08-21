@@ -15,18 +15,20 @@ RSpec.describe "As a visitor", type: :feature do
               image: "https://allaboutshepherds.com/wp-content/uploads/2016/05/gsd-canoe.jpg",
               name: "Bailey",
               age: "3",
-              sex: "Female"
+              sex: "Female",
+              description: "She's a 85 pound lap dog!",
+              status: "Adoptable"
               )
   end
   
-  it "When I visit /pets I see the name of each pet in the system along with all information" do
+  it "When I visit /pets/:id I see all the information about this pet" do
 
-    visit '/pets'
-
+    visit "/pets/#{@pet_1.id}"
+    
     expect(page).to have_content(@pet_1.name)
+    expect(page).to have_content(@pet_1.description)
     expect(page).to have_content(@pet_1.age)
     expect(page).to have_content(@pet_1.sex)
-    expect(page).to have_content(@pet_1.name)
-    expect(page).to have_content(@shelter_1.name)
+    expect(page).to have_content(@pet_1.status)
   end
 end
