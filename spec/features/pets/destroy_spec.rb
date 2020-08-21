@@ -21,28 +21,26 @@ RSpec.describe "As a visitor", type: :feature do
               )
   end
   
-  it "I can edit a shelters' pets" do
-    visit "/shelters/#{@shelter_1.id}/pets"
-    expect(page).to have_link("Create Pet")
-    
-    click_on "Create Pet"
-    
-    expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets/new")
-    
-    fill_in 'Image', with: @pet_1.image
-    fill_in 'Name', with: @pet_1.name
-    fill_in 'Description', with: @pet_1.description
-    fill_in 'Age', with: @pet_1.age
-    fill_in 'Sex', with: @pet_1.sex
-    
-    click_on 'Create Pet'
+  it "I can delete a shelters' pets" do
 
-    expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
-  
+    visit "/pets/#{@pet_1.id}"
+    
+    expect(page).to have_link("Delete Pet")
+
     expect(page).to have_content("Name: #{@pet_1.name}")
     expect(page).to have_content("Age: #{@pet_1.age}")
     expect(page).to have_content("Sex: #{@pet_1.sex}")
     expect(page).to have_content("Description: #{@pet_1.description}")
     expect(page).to have_content("Adoption Status: #{@pet_1.status}")
+
+    click_on "Delete Pet"
+
+    expect(current_path).to eq("/pets")
+    
+    expect(page).to_not have_content("Name: #{@pet_1.name}")
+    expect(page).to_not have_content("Age: #{@pet_1.age}")
+    expect(page).to_not have_content("Sex: #{@pet_1.sex}")
+    expect(page).to_not have_content("Description: #{@pet_1.description}")
+    expect(page).to_not have_content("Adoption Status: #{@pet_1.status}")
   end
 end
