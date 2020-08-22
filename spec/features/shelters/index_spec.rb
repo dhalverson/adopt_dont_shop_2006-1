@@ -34,7 +34,7 @@ RSpec.describe "As a visitor", type: :feature do
     within("navbar") do
       click_on "Shelter Index"
     end
-    save_and_open_page
+
     expect(page).to have_content(@shelter_1.name)
     expect(page).to have_content(@shelter_2.name)
   end

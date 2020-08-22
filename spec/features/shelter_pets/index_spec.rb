@@ -37,4 +37,20 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_content("Age: 13")
     expect(page).to have_content("Sex: Male")
   end
+  
+  it "I have a link to access pets for this shelter" do
+    visit "/shelters/#{@shelter_1.id}"
+    
+    click_link "Shelter's Pets Page"
+    
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
+  
+    expect(page).to have_content("Name: Bailey")
+    expect(page).to have_content("Age: 3")
+    expect(page).to have_content("Sex: Female")
+    
+    expect(page).to have_content("Name: Rio")
+    expect(page).to have_content("Age: 13")
+    expect(page).to have_content("Sex: Male")
+  end
 end
