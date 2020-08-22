@@ -22,7 +22,19 @@ RSpec.describe "As a visitor", type: :feature do
   it "When I visit /shelters I see the name of each shelter in the system" do
 
     visit '/shelters'
+
+    expect(page).to have_content(@shelter_1.name)
+    expect(page).to have_content(@shelter_2.name)
+  end
+  
+  it "When I visit /shelters I see the name of each shelter in the system" do
+
+    visit '/pets'
     
+    within("navbar") do
+      click_on "Shelter Index"
+    end
+    save_and_open_page
     expect(page).to have_content(@shelter_1.name)
     expect(page).to have_content(@shelter_2.name)
   end

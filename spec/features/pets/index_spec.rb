@@ -29,4 +29,19 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_content(@pet_1.name)
     expect(page).to have_content(@shelter_1.name)
   end
+  
+  it "I can access the pet index from any page" do
+
+    visit '/shelters'
+
+    within("navbar") do
+      click_on "Pet Index"
+    end
+
+    expect(page).to have_content(@pet_1.name)
+    expect(page).to have_content(@pet_1.age)
+    expect(page).to have_content(@pet_1.sex)
+    expect(page).to have_content(@pet_1.name)
+    expect(page).to have_content(@shelter_1.name)
+  end
 end
