@@ -19,7 +19,7 @@ RSpec.describe "As a visitor", type: :feature do
             })
   end
   
-  it "When I visit /shelters/:id I see all information pertaining to this shelter" do
+  it "When I visit /shelters/:id I can click a link to delete a shelter" do
 
     visit "/shelters/#{@shelter_1.id}"
 
@@ -28,6 +28,21 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_link("Delete Shelter")
     
     click_link "Delete Shelter"
+
+    expect(current_path).to eq("/shelters")
+    
+    expect(Shelter.first.name).to eq("Secondary Shelter")
+  end
+  
+  it "When I visit /shelters I can click a link to delete a shelter" do
+
+    visit "/shelters"
+
+    expect(Shelter.first.name).to eq("Primary Shelter")
+  
+    expect(page).to have_link("Delete Shelter")
+    
+    click_link("Delete Shelter", match: :first)
 
     expect(current_path).to eq("/shelters")
     
