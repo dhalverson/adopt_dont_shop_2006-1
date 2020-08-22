@@ -1,6 +1,6 @@
 
 <%= image_tag(@pet.image, alt: "pet picture", method: :get, class: 'pet-image') %>
-<p>Name: <%= @pet.name %></p>
+<p>Name: <%= link_to "#{@pet.name}", "/pets/#{@pet.id}" %></p>
 <p>Description: <%= @pet.description %></p>
 <p>Approximate Age: <%= @pet.age %></p>
 <p>Sex: <%= @pet.sex %></p>
