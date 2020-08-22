@@ -22,6 +22,8 @@ RSpec.describe "As a visitor", type: :feature do
   end
   
   it "I can edit a shelters' pets" do
+    blank_input = " "
+    
     visit "/shelters/#{@shelter_1.id}/pets"
     expect(page).to have_link("Create Pet")
     
