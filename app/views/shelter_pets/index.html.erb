@@ -1,3 +1,5 @@
+
+<h3>Shelter: <%= link_to "#{@shelter.name}", "/shelters/#{@shelter.id}" %></h3>
 <hr>
 <% @shelter.pets.each do |pet| %>
   <%= image_tag(pet.image, alt: "pet picture", method: :get, class: 'pet-image') %>
