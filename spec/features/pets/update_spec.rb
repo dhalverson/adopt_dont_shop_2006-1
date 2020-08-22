@@ -56,7 +56,7 @@ RSpec.describe "As a visitor", type: :feature do
     visit "/pets"
     
     expect(page).to have_link("Update Pet")
-    save_and_open_page
+
     expect(page).to have_content("Name: #{@pet_1.name}")
     expect(page).to have_content("Age: #{@pet_1.age}")
     expect(page).to have_content("Sex: #{@pet_1.sex}")
