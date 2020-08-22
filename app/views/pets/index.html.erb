@@ -2,14 +2,14 @@
 <hr/>
 <% @pets.each do |pet|%>
   <%= image_tag(pet.image, alt: "pet picture", method: :get, class: 'pet-image') %>
-  <br>
-  <p><%= pet.name %></p>
-  <br>
-  <p><%= pet.age %></p>
-  <br>
-  <p><%= pet.sex %></p>
-  <br>
+  <p>Name: <%= pet.name %></p>
+  <p>Description: <%= pet.description %></p>
+  <p>Age: <%= pet.age %></p>
+  <p>Sex: <%= pet.sex %></p>
+  <p>Adoption Status: <%= pet.status %></p>
   <p><%= pet.shelter.name %></p>
+  <p><%= link_to "Update Pet", "/pets/#{pet.id}/edit" %></p>
+  <p><%= link_to "Delete Pet", "/pets/#{pet.id}", method: :delete %></p>
   <br><hr/>
 <% end %>
 
