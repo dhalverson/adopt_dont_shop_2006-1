@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ 
+ div.a {
+  text-align: center;
+  }
+  
  body {
   background-color: #a7ecf2;
   font-family: "copperplate";
@@ -23,6 +28,13 @@
   	font-size: 40px;
   	color: #743b1a;
   	font-family: "copperplate";
+  }
+  
+  h3 {
+   text-align: center;
+    font-size: 55px;
+    color: #743b1a;
+    font-family: "copperplate";
   }
   
   p {

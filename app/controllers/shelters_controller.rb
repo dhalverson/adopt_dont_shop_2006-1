@@ -20,7 +20,7 @@ class SheltersController < ApplicationController
       redirect_to "/shelters"
     else
       # flash[:error] = "#{@new_shelter.name} was not created due to missing information..."
-      render :new
+      # render :new
     end
   end
   
@@ -36,7 +36,7 @@ class SheltersController < ApplicationController
       redirect_to "/shelters/#{@shelter.id}"
     else
       # flash[:error] = current_user.errors.full_messages.uniq.to_sentence
-      redirect_to "/shelters/#{@shelter.id}/edit"
+      # redirect_to "/shelters/#{@shelter.id}/edit"
     end
   end
   

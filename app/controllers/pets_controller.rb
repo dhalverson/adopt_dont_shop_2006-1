@@ -21,7 +21,7 @@ class PetsController < ApplicationController
       redirect_to "/shelters/#{shelter.id}/pets"
     else
       # flash[:error] = "#{@new_shelter.name} was not created due to missing information..."
-      render :new
+      # render :new
     end
   end
   
@@ -37,7 +37,7 @@ class PetsController < ApplicationController
       redirect_to "/pets/#{params[:id]}"
     else
       # flash[:notice] = "Unsuccessful shelter submission, please fill in the following fields prior to submission: #{missing_fields.each { |field| "#{field} "}}"
-      redirect_to "/pets/#{params[:id]}/edit"
+      # redirect_to "/pets/#{params[:id]}/edit"
     end
   end
   
