@@ -14,9 +14,6 @@
  *= require_self
  */
  
- div.a {
-  text-align: center;
-  }
   
  body {
   background-color: #a7ecf2;
@@ -26,6 +23,13 @@
   h1 {
    text-align: left;
   	font-size: 40px;
+  	color: #743b1a;
+  	font-family: "copperplate";
+  }
+  
+  h2 {
+   text-align: left;
+  	font-size: 30px;
   	color: #743b1a;
   	font-family: "copperplate";
   }
