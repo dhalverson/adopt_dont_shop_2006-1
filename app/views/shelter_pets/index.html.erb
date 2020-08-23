@@ -1,6 +1,8 @@
 <hr>
 <h1>Shelter: <%= link_to "#{@shelter.name}", "/shelters/#{@shelter.id}" %></h1>
+<h2><%= link_to "Create Pet", "/shelters/#{@shelter.id}/pets/new" %></h2>
 <h2><%="*** Available Pets Here: #{@shelter.pets.count} ***"%></h2>
+
 <hr>
 <% @shelter.pets.each do |pet| %>
   <%= image_tag(pet.image, alt: "pet picture", method: :get, class: 'pet-image') %>
@@ -15,5 +17,4 @@
 <% end %>
 
 
-<p><%= link_to "Create Pet", "/shelters/#{@shelter.id}/pets/new" %></p>
 

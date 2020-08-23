@@ -14,6 +14,6 @@
   <%= label_tag :sex %>
   <%= text_field_tag :sex %>
   <br>
-  <br>
+  <%= hidden_field_tag(:status, "Adoptable") %>
   <%= submit_tag 'Create Pet' %>
 <% end %>
