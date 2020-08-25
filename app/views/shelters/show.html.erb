@@ -5,6 +5,7 @@
 <p>State: <%= @shelter.state %></p>
 <p>Zip: <%= @shelter.zip %></p>
 <hr>
+
 <h2>Reviews:</h2>
 <% @shelter.shelter_reviews.each do |review|%>
   <%=image_tag(review.image) %>
@@ -12,6 +13,8 @@
   <p>Rating: <%= review.rating %></p>
   <p>Content: <%= review.content %></p>
 <% end %>
+<p><%= link_to "New Review", "/shelters/#{@shelter.id}/reviews/new" %></p>
+
 <hr>
 
 <p><%= link_to "Shelter's Pets Page", "/shelters/#{@shelter.id}/pets" %></p>
