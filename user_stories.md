@@ -1,7 +1,7 @@
 ```
 User Stories
 
-[ ] done
+[x] done
 
 User Story 1, Deploy your application to Heroku
 
@@ -14,7 +14,7 @@ Shelter Reviews
 
 Users will be able to share their experiences with a shelter through providing reviews. Users should be able to create a review with a title (Example: "Awesome place!"), a rating (out of 5), and content (Example: "Truly enjoyed our time working with this shelter. Staff was great, and we found our perfect pet!"). A user can also upload one picture (image url address) for their review as well, but this is optional.
 
-[ ] done
+[x] done
 
 User Story 2, Shelter Reviews
 
@@ -26,6 +26,8 @@ Each review will have:
 - rating
 - content
 - an optional picture
+
+
 [ ] done
 
 User Story 3, Shelter Review Creation
@@ -41,6 +43,8 @@ On this new page, I see a form where I must enter:
 I also see a field where I can enter an optional image (web address)
 When the form is submitted, I should return to that shelter's show page
 and I can see my new review
+
+
 [ ] done
 
 User Story 4, Shelter Review Creation, cont.
@@ -49,6 +53,8 @@ As a visitor,
 When I fail to enter a title, a rating, and/or content in the new shelter review form, but still try to submit the form
 I see a flash message indicating that I need to fill in a title, rating, and content in order to submit a shelter review
 And I'm returned to the new form to create a new review
+
+
 [ ] done
 
 User Story 5, Edit a Shelter Review
@@ -65,6 +71,8 @@ On this new page, I see a form that includes that review's pre populated data:
 I can update any of these fields and submit the form.
 When the form is submitted, I should return to that shelter's show page
 And I can see my updated review
+
+
 [ ] done
 
 User Story 6, Edit a Shelter Review, cont.
@@ -73,6 +81,8 @@ As a visitor,
 When I fail to enter a title, a rating, and/or content in the edit shelter review form, but still try to submit the form
 I see a flash message indicating that I need to fill in a title, rating, and content in order to edit a shelter review
 And I'm returned to the edit form to edit that review
+
+
 [ ] done
 
 User Story 7, Delete a Shelter Review
@@ -86,6 +96,7 @@ Favorite a Pet
 
 Users will be able to favorite a pet and keep track of pet's they're interested in
 
+
 [ ] done
 
 User Story 8, Favorite Indicator
@@ -94,6 +105,8 @@ As a visitor
 I see a favorite indicator in my navigation bar
 The favorite indicator shows a count of pets in my favorites list
 I can see this favorite indicator from any page in the application
+
+
 [ ] done
 
 User Story 9, Favorite Creation
@@ -105,6 +118,8 @@ When I click the button or link
 I'm taken back to that pet's show page
 I see a flash message indicating that the pet has been added to my favorites list
 The favorite indicator in the nav bar has incremented by one
+
+
 [ ] done
 
 User Story 10, Favorite Index Page
@@ -116,6 +131,8 @@ I see all pets I've favorited
 Each pet in my favorites shows the following information:
 - pet's name (link to pets show page)
 - pet's image
+
+
 [ ] done
 
 User Story 11, Favorite Indicator links to Index Page
@@ -123,6 +140,8 @@ User Story 11, Favorite Indicator links to Index Page
 As a visitor
 When I click on the favorite indicator in the nav bar
 I am taken to the favorites index page
+
+
 [ ] done
 
 User Story 12, Can't Favorite a Pet More Than Once
@@ -137,6 +156,8 @@ A delete request is sent to "/favorites/:pet_id"
 And I'm redirected back to that pets show page where I can see a flash message indicating that the pet was removed from my favorites
 And I can now see a link to favorite that pet
 And I also see that my favorites indicator has decremented by 1
+
+
 [ ] done
 
 User Story 13, Remove a Favorite from Favorites Page
@@ -149,6 +170,8 @@ When I click on that button or link to remove a favorite
 A delete request is sent to "/favorites/:pet_id"
 And I'm redirected back to the favorites page where I no longer see that pet listed
 And I also see that the favorites indicator has decremented by 1
+
+
 [ ] done
 
 User Story 14, No Favorites Page
@@ -157,6 +180,8 @@ As a visitor
 When I have not added any pets to my favorites list
 And I visit my favorites page ("/favorites")
 I see text saying that I have no favorited pets
+
+
 [ ] done
 
 User Story 15, Remove all Favorite from Favorites Page
@@ -172,6 +197,7 @@ And the favorites indicator returns to 0
 Apply for Pet(s)
 
 Users will be able to submit an application for one ore more pets they they've favorited.
+
 
 [ ] done
 
@@ -194,6 +220,8 @@ When I select one or more pets, and fill in my
 And I click on a button to submit my application
 I see a flash message indicating my application went through for the pets that were selected
 And I'm taken back to my favorites page where I no longer see the pets for which I just applied listed as favorites
+
+
 [ ] done
 
 User Story 17, Incomplete application for a Pet
@@ -210,6 +238,8 @@ When I apply for a pet and fail to fill out any of the following:
 And I click on a button to submit my application
 I'm redirect back to the new application form to complete the necessary fields
 And I see a flash message indicating that I must complete the form in order to submit the application
+
+
 [ ] done
 
 User Story 18, List of Pets that have applications on them
@@ -219,6 +249,8 @@ After one or more applications have been created
 When I visit the favorites index page
 I see a section on the page that has a list of all of the pets that have at least one application on them
 Each pet's name is a link to their show page
+
+
 [ ] done
 
 User Story 19, Application Show Page
@@ -234,6 +266,8 @@ I can see the following:
 - phone number
 - Description of why the applicant says they'd be a good home for this pet(s)
 - names of all pet's that this application is for (all names of pets should be links to their show page)
+
+
 [ ] done
 
 User Story 20, Pet Applications Index Page
@@ -244,6 +278,8 @@ I see a link to view all applications for this pet
 When I click that link
 I can see a list of all the names of applicants for this pet
 Each applicant's name is a link to their application show page
+
+
 [ ] done
 
 User Story 21, Pet Applications Index Page When No Applications
@@ -251,6 +287,8 @@ User Story 21, Pet Applications Index Page When No Applications
 As a visitor
 When I visit a pet applications index page for a pet that has no applications on them
 I see a message saying that there are no applications for this pet yet
+
+
 [ ] done
 
 User Story 22, Approving an Application
@@ -262,6 +300,8 @@ When I click on a link to approve the application for one particular pet
 I'm taken back to that pet's show page
 And I see that the pets status has changed to 'pending'
 And I see text on the page that says who this pet is on hold for (Ex: "On hold for John Smith", given John Smith is the name on the application that was just accepted)
+
+
 [ ] done
 
 User Story 23, Users can get approved to adopt more than one pet
@@ -272,6 +312,7 @@ When I visit that applications show page
 I'm able to approve the application for any number of pets
 User Story 24, Pets can only have one approved application on them at any time
 
+
 [ ] done
 
 As a visitor
@@ -279,7 +320,9 @@ When a pet has more than one application made for them
 And one application has already been approved for them
 I can not approve any other applications for that pet but all other applications still remain on file (they can be seen on the pets application index page)
 (This can be done by either taking away the option to approve the application, or having a flash message pop up saying that no more applications can be approved for this pet at this time)
+
 User Story 25, Approved Applications can be revoked
+
 
 [ ] done
 

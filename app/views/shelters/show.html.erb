@@ -5,6 +5,15 @@
 <p>State: <%= @shelter.state %></p>
 <p>Zip: <%= @shelter.zip %></p>
 <hr>
+<h2>Reviews:</h2>
+<% @shelter.shelter_reviews.each do |review|%>
+  <%=image_tag(review.image) %>
+  <p>Title: <%= review.title %></p>
+  <p>Rating: <%= review.rating %></p>
+  <p>Content: <%= review.content %></p>
+<% end %>
+<hr>
+
 <p><%= link_to "Shelter's Pets Page", "/shelters/#{@shelter.id}/pets" %></p>
 <p><%= link_to "Update Shelter", "/shelters/#{@shelter.id}/edit" %></p>
 <p><%= link_to "Delete Shelter", "/shelters/#{@shelter.id}", method: :delete %></p>
