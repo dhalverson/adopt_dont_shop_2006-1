@@ -28,7 +28,7 @@ Each review will have:
 - an optional picture
 
 
-[ ] done
+[X] done
 
 User Story 3, Shelter Review Creation
 
