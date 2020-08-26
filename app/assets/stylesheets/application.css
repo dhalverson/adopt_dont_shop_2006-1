@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
- 
-  
+
+
  body {
   background-color: #a7ecf2;
   font-family: "copperplate";
@@ -26,21 +26,37 @@
   	color: #743b1a;
   	font-family: "copperplate";
   }
-  
+
   h2 {
    text-align: left;
   	font-size: 30px;
   	color: #743b1a;
   	font-family: "copperplate";
   }
-  
+
   h3 {
    text-align: center;
     font-size: 55px;
     color: #743b1a;
     font-family: "copperplate";
   }
-  
+
+  h4 {
+   text-align: center;
+    font-size: 25px;
+    color: #743b1a;
+    font-family: "copperplate";
+    background-color: green;
+  }
+
+  h5 {
+   text-align: center;
+    font-size: 25px;
+    color: #743b1a;
+    font-family: "copperplate";
+    background-color: red;
+  }
+
   p {
    text-align: left;
     font-size: 20px;
@@ -181,7 +197,7 @@
  tr:nth-child(even) {
    background-color: #F0F8FF;
  }
- 
+
  /* unvisited link */
 a:link {
   color: #9a4f23;
@@ -200,4 +216,15 @@ a:hover {
 /* selected link */
 a:active {
   color: #b08e2c;
+}
+
+.error-flash {
+  padding: 10px;
+  background-color: red;
+  color: white;
+}
+.success-flash {
+  padding: 10px;
+  background-color: green;
+  color: white;
 }
