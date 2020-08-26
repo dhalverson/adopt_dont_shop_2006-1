@@ -44,7 +44,6 @@ RSpec.describe "As a visitor", type: :feature do
     visit "/shelters/#{@shelter_1.id}/reviews/new"
     click_on "Create Review"
 
-    save_and_open_page
     expect(page).to have_content("Review not created, please fill in a title, rating, and/or content")
     expect(page).to have_button("Create Review")
 
