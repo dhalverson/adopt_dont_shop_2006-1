@@ -12,8 +12,18 @@ class ShelterReviewsController < ApplicationController
       redirect_to "/shelters/#{@shelter.id}"
     else
       flash[:error] = "Review not created, please fill in a title, rating, and/or content"
-      render :new
+      redirect_to "/shelters/#{@shelter.id}/reviews/new"
     end
+  end
+
+  def edit
+    @shelter = Shelter.find(params[:shelter_id])
+    @review = ShelterReview.find(params[:review_id])
+  end
+
+  def update
+    review = ShelterReview.update(review_params)
+    redirect_to "/shelters/#{params[:shelter_id]}"
   end
 
 private
