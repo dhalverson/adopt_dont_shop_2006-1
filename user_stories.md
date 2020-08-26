@@ -45,7 +45,7 @@ When the form is submitted, I should return to that shelter's show page
 and I can see my new review
 
 
-[ ] done
+[X] done
 
 User Story 4, Shelter Review Creation, cont.
 
