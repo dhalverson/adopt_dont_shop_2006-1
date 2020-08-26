@@ -8,10 +8,12 @@
 
 <h2>Reviews:</h2>
 <% @shelter.shelter_reviews.each do |review|%>
-  <%=image_tag(review.image) %>
+  <img src= <%=review.image %>>
   <p>Title: <%= review.title %></p>
   <p>Rating: <%= review.rating %></p>
   <p>Content: <%= review.content %></p>
+  <p><%= link_to "Edit Review", "/shelters/#{@shelter.id}/reviews/#{review.id}/edit" %></p>
+<hr>
 <% end %>
 <p><%= link_to "New Review", "/shelters/#{@shelter.id}/reviews/new" %></p>
 
