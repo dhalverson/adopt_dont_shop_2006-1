@@ -17,6 +17,8 @@
     <%= link_to "| Shelter Index |", "/shelters" %>
     </navbar>
     </nav>
-    <%= yield %>
+    <h4><%= flash[:success] %></h4>
+    <h5><%= flash[:error] %></h5>
+        <%= yield %>
   </body>
 </html>
