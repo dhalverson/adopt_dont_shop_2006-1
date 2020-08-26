@@ -40,6 +40,16 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_content("Review content")
     # expect(page).to have_content("image placeholder")
   end
+  it "I can not create a review without a name and receive a flash message" do
+    visit "/shelters/#{@shelter_1.id}/reviews/new"
+    click_on "Create Review"
+
+    save_and_open_page
+    expect(page).to have_content("Review not created, please fill in a title, rating, and/or content")
+    expect(page).to have_button("Create Review")
+
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/reviews/new")
+  end
 end
     # User Story 3, Shelter Review Creation
     #
@@ -54,3 +64,10 @@ end
     # I also see a field where I can enter an optional image (web address)
     # When the form is submitted, I should return to that shelter's show page
     # and I can see my new review
+
+    # User Story 4, Shelter Review Creation, cont.
+    #
+    # As a visitor,
+    # When I fail to enter a title, a rating, and/or content in the new shelter review form, but still try to submit the form
+    # I see a flash message indicating that I need to fill in a title, rating, and content in order to submit a shelter review
+    # And I'm returned to the new form to create a new review
