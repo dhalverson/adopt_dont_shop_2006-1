@@ -2,7 +2,7 @@
 
 <%= form_tag "/shelters/#{@shelter.id}/reviews", method: :post do %>
   <p><%= label_tag :title %></p>
-  <%= text_field_tag :title%>
+  <%= text_field_tag :title %>
   <br>
   <p><%= label_tag :rating %></p>
   <%= text_field_tag :rating %>
