@@ -41,20 +41,15 @@
     font-family: "copperplate";
   }
 
-  h4 {
-   text-align: center;
-    font-size: 25px;
-    color: #743b1a;
-    font-family: "copperplate";
-    background-color: green;
-  }
-
-  h5 {
-   text-align: center;
-    font-size: 25px;
-    color: #743b1a;
-    font-family: "copperplate";
+  .error-flash {
+    padding: 10px;
     background-color: red;
+    color: white;
+  }
+  .success-flash {
+    padding: 10px;
+    background-color: green;
+    color: white;
   }
 
   p {
@@ -216,15 +211,4 @@ a:hover {
 /* selected link */
 a:active {
   color: #b08e2c;
-}
-
-.error-flash {
-  padding: 10px;
-  background-color: red;
-  color: white;
-}
-.success-flash {
-  padding: 10px;
-  background-color: green;
-  color: white;
 }
