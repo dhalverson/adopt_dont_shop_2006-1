@@ -33,8 +33,12 @@ RSpec.describe "As a visitor", type: :feature do
     # expect(page).to have_content(@review_1.image)
     # expect(page).to_not have_content(@review_2.image)
     # expect(page).to have_content(@review_3.image)
-
-    click_link("Delete Review", match: :first)
+    
+    within "#review-#{@review_1.id}" do
+      click_link "Delete Review"
+    end
+    
+    # click_link("Delete Review", match: :first)
     
     expect(current_path).to eq("/shelters/#{@shelter_1.id}")
     
