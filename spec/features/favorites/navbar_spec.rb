@@ -31,22 +31,8 @@ RSpec.describe "As a visitor", type: :feature do
     visit "/pets"
 
     within "navbar" do
-<<<<<<< HEAD
       expect(page).to have_link("Favorites - 2")
     end
-    
-    # User Story 8, Favorite Indicator
-
-    # As a visitor
-    # I see a favorite indicator in my navigation bar
-    # The favorite indicator shows a count of pets in my favorites list
-    # I can see this favorite indicator from any page in the application
-=======
-      click_link "| Pet Index |"
-    end
-    
-    expect(current_path).to eq("/pets")
->>>>>>> fc5397ed54848d18fa2d7869a644d0a7d7e3de63
   
   end
 end
