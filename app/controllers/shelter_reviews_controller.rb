@@ -22,7 +22,20 @@ class ShelterReviewsController < ApplicationController
   end
 
   def update
-    review = ShelterReview.update(review_params)
+    @shelter = Shelter.find(params[:shelter_id])
+    @review = ShelterReview.find(params[:review_id])
+    if @review.update(review_params)
+      flash[:success] = "Review successfully updated"
+      redirect_to "/shelters/#{@shelter.id}"
+    else
+      flash[:error] = "Review not updated, please fill in a title, rating, and/or content"
+      render :edit
+    end
+  end
+  
+  def destroy
+    ShelterReview.destroy(params[:review_id])
+    flash[:success] = "Review successfully deleted"
     redirect_to "/shelters/#{params[:shelter_id]}"
   end
 
