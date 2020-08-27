@@ -7,19 +7,19 @@
 <hr>
 
 <h2>Reviews:</h2>
-  <div id = "reviews">
-    <% @shelter.shelter_reviews.each do |review|%>
-      <div id= "review-<%=review.id%>">
-        <img src= <%=review.image %>>
-        <p>Title: <%= review.title %></p>
-        <p>Rating: <%= review.rating %></p>
-        <p>Content: <%= review.content %></p>
-      </div>
-      <p><%= link_to "Edit Review", "/shelters/#{@shelter.id}/reviews/#{review.id}/edit" %></p>
-      <p><%= link_to "Delete Review", "/shelters/#{@shelter.id}/reviews/#{review.id}", method: :delete%></p>
-      <hr>
-    <% end %>
-  </div>
+<% @shelter.shelter_reviews.each do |review|%>
+  <section id="Review-<%=review.id%>">
+    <% binding.pry %>
+    <img src= <%=review.image %>>
+    <p>Title: <%= review.title %></p>
+    <p>Rating: <%= review.rating %></p>
+    <p>Content: <%= review.content %></p
+    <p><%= link_to "Edit Review", "/shelters/#{@shelter.id}/reviews/#{review.id}/edit" %></p>
+    <p><%= link_to "Delete Review", "/shelters/#{@shelter.id}/reviews/#{review.id}", method: :delete%></p>
+  </section>
+  <hr>
+<% end %>
+
 
 
 <p><%= link_to "New Review", "/shelters/#{@shelter.id}/reviews/new" %></p>

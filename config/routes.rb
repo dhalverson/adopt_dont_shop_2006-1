@@ -1,6 +1,4 @@
-Rails.application.routes.draw do
-  get "*path" => redirect("/")
-  
+Rails.application.routes.draw do  
   get "/", to: "welcome#index"
   get "/shelters", to: "shelters#index"
   get "/shelters/new", to: "shelters#new"
