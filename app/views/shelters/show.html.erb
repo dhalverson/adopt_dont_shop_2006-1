@@ -8,8 +8,7 @@
 
 <h2>Reviews:</h2>
 <% @shelter.shelter_reviews.each do |review|%>
-  <section id="Review-<%=review.id%>">
-    <% binding.pry %>
+  <section id="review-<%=review.id%>">
     <img src= <%=review.image %>>
     <p>Title: <%= review.title %></p>
     <p>Rating: <%= review.rating %></p>

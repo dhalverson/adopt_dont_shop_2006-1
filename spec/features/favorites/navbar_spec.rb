@@ -28,8 +28,10 @@ RSpec.describe "As a visitor", type: :feature do
 
   it "When I visit /shelters/:id, there is a link to delete each of the shelters reviews" do
 
-    within ".topnav" do
-      # click_link "| Pet Index |"
+    visit "/pets"
+
+    within "navbar" do
+      click_link "| Pet Index |"
     end
     
     expect(current_path).to eq("/pets")
