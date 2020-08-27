@@ -55,7 +55,7 @@ I see a flash message indicating that I need to fill in a title, rating, and con
 And I'm returned to the new form to create a new review
 
 
-[ ] done
+[x] done
 
 User Story 5, Edit a Shelter Review
 
@@ -73,7 +73,7 @@ When the form is submitted, I should return to that shelter's show page
 And I can see my updated review
 
 
-[ ] done
+[x] done
 
 User Story 6, Edit a Shelter Review, cont.
 
@@ -83,7 +83,7 @@ I see a flash message indicating that I need to fill in a title, rating, and con
 And I'm returned to the edit form to edit that review
 
 
-[ ] done
+[x] done
 
 User Story 7, Delete a Shelter Review
 
@@ -92,6 +92,8 @@ When I visit a shelter's show page,
 I see a link next to each shelter review to delete the review.
 When I delete a shelter review I am returned to the shelter's show page
 And I should no longer see that shelter review
+
+
 Favorite a Pet
 
 Users will be able to favorite a pet and keep track of pet's they're interested in
