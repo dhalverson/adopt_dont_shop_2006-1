@@ -13,13 +13,13 @@ RSpec.describe "As a visitor", type: :feature do
 
     @review_1 = @shelter_1.shelter_reviews.create!(title: "Test1 title", rating: "5", content: "Test1 content", image: "https://cdn.pixabay.com/photo/2018/03/31/06/31/dog-3277416_960_720.jpg")
     @review_2 = @shelter_1.shelter_reviews.create!(title: "Test2 title", rating: "3", content: "Test2 content")
-    @review_3 = @shelter_1.shelter_reviews.create!(title: "Test3 title", rating: "1", content: "Test3 content", image: "https://cdn.pixabay.com/photo/2018/03/31/06/31/dog-3277416_960_720.jpg")
+    @review_3 = @shelter_1.shelter_reviews.create!(title: "Test3 title", rating: "1", content: "Test3 content", image: "https://previews.123rf.com/images/daisiemay/daisiemay1701/daisiemay170100001/72084523-the-miniature-pony.jpg")
   end
 
   it "When I visit /shelters/:id, there is a link to delete each of the shelters reviews" do
 
     visit "/shelters/#{@shelter_1.id}"
-    
+
     expect(page).to have_link("Delete Review")
     expect(page).to have_content(@review_1.title)
     expect(page).to have_content(@review_2.title)
@@ -30,18 +30,17 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_content(@review_1.content)
     expect(page).to have_content(@review_2.content)
     expect(page).to have_content(@review_3.content)
-    # expect(page).to have_content(@review_1.image)
-    # expect(page).to_not have_content(@review_2.image)
-    # expect(page).to have_content(@review_3.image)
-    
+    expect(page).to have_css("img[src*='https://cdn.pixabay.com/photo/2018/03/31/06/31/dog-3277416_960_720.jpg']")
+    expect(page).to have_css("img[src*='https://previews.123rf.com/images/daisiemay/daisiemay1701/daisiemay170100001/72084523-the-miniature-pony.jpg']")
+
     within "#review-#{@review_1.id}" do
       click_link "Delete Review"
     end
-    
+
     # click_link("Delete Review", match: :first)
-    
+
     expect(current_path).to eq("/shelters/#{@shelter_1.id}")
-    
+
     expect(page).to have_link("Delete Review")
     expect(page).to_not have_content(@review_1.title)
     expect(page).to have_content(@review_2.title)
