@@ -13,4 +13,8 @@ class Favorites
     @favorite_pets.include?(pet_id)
   end
 
+  def create_array
+    @favorite_pets.map(&:to_i)
+  end
+
 end
