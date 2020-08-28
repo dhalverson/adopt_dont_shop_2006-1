@@ -10,14 +10,14 @@ RSpec.describe "As a visitor", type: :feature do
               state: "CO",
               zip: "80438"
               })
-            
+
     @pet_1 = @shelter_1.pets.create(
               image: "https://allaboutshepherds.com/wp-content/uploads/2016/05/gsd-canoe.jpg",
               name: "Bailey",
               age: "3",
               sex: "Female"
               )
-          
+
     @pet_2 = @shelter_1.pets.create(
               image: "https://allaboutshepherds.com/wp-content/uploads/2016/05/gsd-canoe.jpg",
               name: "Rio",
@@ -31,8 +31,7 @@ RSpec.describe "As a visitor", type: :feature do
     visit "/pets"
 
     within "navbar" do
-      expect(page).to have_link("Favorites - 2")
+      expect(page).to have_link("Favorites - 0")
     end
-  
   end
 end
