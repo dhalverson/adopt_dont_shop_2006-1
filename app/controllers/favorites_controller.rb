@@ -1,5 +1,12 @@
 class FavoritesController < ApplicationController
 
+  def index
+    @favorites = []
+    favorite_pets.create_array.each do |pet|
+      @favorites << Pet.find(pet)
+    end
+  end
+
   def update
     pet = Pet.find(params[:pet_id])
     pet_id_str = pet.id.to_s
@@ -13,4 +20,6 @@ class FavoritesController < ApplicationController
       redirect_to "/pets/#{pet.id}"
     end
   end
+
+
 end
