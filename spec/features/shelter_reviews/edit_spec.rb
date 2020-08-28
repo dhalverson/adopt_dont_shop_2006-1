@@ -58,7 +58,7 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_content("Updated title")
     expect(page).to have_content("Updated rating")
     expect(page).to have_content("Updated content")
-    # expect(page).to have_css("img[src*='#{@review_1.image}']")
+    expect(page).to have_css("img[src*='https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg']")
 
   end
 end

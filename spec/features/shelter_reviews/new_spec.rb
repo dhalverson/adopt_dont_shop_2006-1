@@ -38,8 +38,9 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_content("Review string")
     expect(page).to have_content("Review rating")
     expect(page).to have_content("Review content")
-    # expect(page).to have_content("image placeholder")
+    expect(page).to have_css("img[src*='https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg']")
   end
+  
   it "I can not create a review without a name and receive a flash message" do
     visit "/shelters/#{@shelter_1.id}/reviews/new"
     click_on "Create Review"
