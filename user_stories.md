@@ -99,7 +99,7 @@ Favorite a Pet
 Users will be able to favorite a pet and keep track of pet's they're interested in
 
 
-[ ] done
+[x] done
 
 User Story 8, Favorite Indicator
 
@@ -109,7 +109,7 @@ The favorite indicator shows a count of pets in my favorites list
 I can see this favorite indicator from any page in the application
 
 
-[ ] done
+[x] done
 
 User Story 9, Favorite Creation
 
@@ -122,7 +122,7 @@ I see a flash message indicating that the pet has been added to my favorites lis
 The favorite indicator in the nav bar has incremented by one
 
 
-[ ] done
+[x] done
 
 User Story 10, Favorite Index Page
 
@@ -135,7 +135,7 @@ Each pet in my favorites shows the following information:
 - pet's image
 
 
-[ ] done
+[x] done
 
 User Story 11, Favorite Indicator links to Index Page
 
