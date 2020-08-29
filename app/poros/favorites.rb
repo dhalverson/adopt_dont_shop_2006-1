@@ -10,11 +10,12 @@ class Favorites
   end
 
   def favorited?(pet_id)
-    @favorite_pets.include?(pet_id)
+    @favorite_pets.include?(pet_id.to_s)
   end
 
   def create_array
     @favorite_pets.map(&:to_i)
   end
+
 
 end
