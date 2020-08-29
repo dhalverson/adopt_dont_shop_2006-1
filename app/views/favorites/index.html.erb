@@ -5,5 +5,6 @@
 <% @favorites.each do |pet| %>
   <%= image_tag(pet.image, alt: "pet picture", method: :get, class: 'pet-image') %>
   <h2>Name: <%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h2>
+  <p><%= link_to "Remove from Favorites", "/favorites/#{pet.id}", method: :delete %></p>
   <hr>
 <% end %>
