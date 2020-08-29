@@ -144,7 +144,7 @@ When I click on the favorite indicator in the nav bar
 I am taken to the favorites index page
 
 
-[ ] done
+[x] done
 
 User Story 12, Can't Favorite a Pet More Than Once
 
