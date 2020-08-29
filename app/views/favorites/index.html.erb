@@ -1,10 +1,14 @@
 <hr>
-<h1>Favorites:</h1>
 
+<% if @favorites.empty? %>
+    <h2><center>You have no favorited pets!</center></h2>
+<% else %>
+<h1>Favorites:</h1>
 <hr>
-<% @favorites.each do |pet| %>
-  <%= image_tag(pet.image, alt: "pet picture", method: :get, class: 'pet-image') %>
-  <h2>Name: <%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h2>
-  <p><%= link_to "Remove from Favorites", "/favorites/#{pet.id}", method: :delete %></p>
-  <hr>
+  <% @favorites.each do |pet| %>
+    <%= image_tag(pet.image, alt: "pet picture", method: :get, class: 'pet-image') %>
+    <h2>Name: <%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h2>
+    <p><%= link_to "Remove from Favorites", "/favorites/#{pet.id}", method: :delete %></p>
+    <hr>
+  <% end %>
 <% end %>
