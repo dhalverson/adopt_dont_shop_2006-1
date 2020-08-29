@@ -75,8 +75,55 @@ RSpec.describe "As a visitor", type: :feature do
       expect(page).to have_link("Favorites - 0")
     end
   end
+
+  it "From my favorites page, I see a link to remove all favorited pets" do
+
+    pet_2 = @shelter_1.pets.create!(
+              image: "https://i.pinimg.com/originals/ea/cd/6a/eacd6a5cbcf58c93fa4cfc4d83159896.jpg",
+              name: "Bruiser",
+              age: "2",
+              sex: "Male",
+              description: "He's a 185 pound lap dog!",
+              status: "Adoptable"
+              )
+
+    visit "/pets/#{@pet_1.id}"
+    expect(page).to have_link("Add to Favorites")
+    click_link("Add to Favorites")
+    within "navbar" do
+      expect(page).to have_link("Favorites - 1")
+    end
+
+    visit "/pets/#{pet_2.id}"
+    expect(page).to have_link("Add to Favorites")
+    click_link("Add to Favorites")
+    within "navbar" do
+      expect(page).to have_link("Favorites - 2")
+    end
+
+    click_link("Favorites - 2")
+    expect(current_path).to eq("/favorites")
+    expect(page).to have_content("Remove All Favorited Pets")
+    click_link("Remove All Favorited Pets")
+
+    expect(current_path).to eq("/favorites")
+    expect(page).to have_content("Success, all pets have been removed from your favorites!")
+    within "navbar" do
+      expect(page).to have_link("Favorites - 0")
+    end
+  end
 end
 
+# User Story 15, Remove all Favorite from Favorites Page
+#
+# As a visitor
+# When I have added pets to my favorites list
+# And I visit my favorites page ("/favorites")
+# I see a link to remove all favorited pets
+# When I click that link
+# I'm redirected back to the favorites page
+# I see the text saying that I have no favorited pets
+# And the favorites indicator returns to 0
 
 
 # User Story 12, Can't Favorite a Pet More Than Once

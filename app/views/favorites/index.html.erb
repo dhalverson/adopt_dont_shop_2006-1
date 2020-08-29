@@ -4,6 +4,7 @@
     <h2><center>You have no favorited pets!</center></h2>
 <% else %>
 <h1>Favorites:</h1>
+<p><%= link_to "Remove All Favorited Pets", "/favorites/-1", method: :delete %></p>
 <hr>
   <% @favorites.each do |pet| %>
     <%= image_tag(pet.image, alt: "pet picture", method: :get, class: 'pet-image') %>
