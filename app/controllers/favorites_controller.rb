@@ -22,9 +22,14 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    pet = Pet.find(params[:pet_id])
-    session[:favorites].delete(pet.id.to_s)
-    flash[:success] = "Success, #{pet.name} has been removed from your favorites!"
+    if params[:pet_id] == "-1"
+      session[:favorites] = []
+      flash[:success] = "Success, all pets have been removed from your favorites!"
+    else
+      pet = Pet.find(params[:pet_id])
+      session[:favorites].delete(pet.id.to_s)
+      flash[:success] = "Success, #{pet.name} has been removed from your favorites!"
+    end
     if URI(request.referer).path == "/favorites"
       redirect_to "/favorites"
     else
