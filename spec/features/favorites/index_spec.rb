@@ -69,4 +69,13 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_content("#{@pet_2.name}")
     expect(page).to have_css("img[src*='#{@pet_2.image}']")
   end
+
+  it "When I have no favorites, and I visit my favorites page, I see text saying I have no favorited pets" do
+
+    visit "/favorites"
+    within "navbar" do
+      expect(page).to have_content("Favorites - 0")
+    end
+    expect(page).to have_content("You have no favorited pets!")
+  end
 end
