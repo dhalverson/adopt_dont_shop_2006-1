@@ -12,6 +12,7 @@ class AdoptionApplicationsController < ApplicationController
     elsif adoption_application.save && validate_pet_ids
       flash[:success] = "Application succesfully submitted for selected pets"
       update_session(params[:pet_ids])
+      pet_adoption_joins(params[:pet_ids], adoption_application)
       redirect_to "/favorites"
     end
   end
@@ -33,6 +34,12 @@ private
   def update_session(pet_ids)
     pet_ids.each do |pet_id|
       session[:favorites].delete(pet_id)
+    end
+  end
+
+  def pet_adoption_joins(pet_ids, adoption_application)
+    pet_ids.each do |pet_id|
+      PetAdoption.create(pet_id: pet_id, adoption_application_id: adoption_application.id)
     end
   end
 
