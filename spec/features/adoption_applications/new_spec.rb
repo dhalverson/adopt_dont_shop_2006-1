@@ -52,7 +52,7 @@ RSpec.describe "As a visitor", type: :feature do
     click_link("Adopt My Favorites")
 
     expect(current_path).to eq("/adoption_applications/new")
-    # page.check("#{@pet.1.id}")
+    select("#{@pet_1.name}")
     fill_in 'Name', with: 'John Doe'
     fill_in 'Address', with: '12 Main St.'
     fill_in 'City', with: 'Casper'
@@ -63,7 +63,7 @@ RSpec.describe "As a visitor", type: :feature do
 
     click_button("Submit Application")
     expect(current_path).to eq("/favorites")
-    expect(page).to have_content("Success, your application for your pets has been submitted!")
+    expect(page).to have_content("Application succesfully submitted for selected pets")
 
     expect(page).to_not have_content("#{@pet_1.name}")
     expect(page).to_not have_css("img[src*='https://allaboutshepherds.com/wp-content/uploads/2016/05/gsd-canoe.jpg']")
