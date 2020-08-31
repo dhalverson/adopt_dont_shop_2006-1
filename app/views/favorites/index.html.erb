@@ -1,10 +1,15 @@
 <hr>
+<p>Pending Applications:</p>
+<% if @applications_pending.empty? %>
+    <p>There are no pets with pending applications</p>
+<% end %>
 <% @applications_pending.each do |pet| %>
   <p><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></p>
 <% end %>
 <% if @favorites.empty? %>
     <h2><center>You have no favorited pets!</center></h2>
 <% else %>
+<section class = "Favorites">
 <h1>Favorites:</h1>
 <p><%= link_to "Adopt My Favorites", "/adoption_applications/new" %></p>
 <p><%= link_to "Remove All Favorited Pets", "/favorites/-1", method: :delete %></p>
@@ -16,3 +21,4 @@
     <hr>
   <% end %>
 <% end %>
+</section>
