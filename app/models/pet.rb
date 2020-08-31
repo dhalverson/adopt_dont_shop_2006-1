@@ -15,5 +15,9 @@ class Pet < ApplicationRecord
   def self.sort_by_status
     Pet.order(status: :asc)
   end
+  
+  def self.with_application
+    Pet.select(:name, :id).joins(:pet_adoptions).uniq
+  end
 
 end

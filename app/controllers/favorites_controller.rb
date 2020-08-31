@@ -5,7 +5,7 @@ class FavoritesController < ApplicationController
     favorite_pets.create_array.each do |pet|
       @favorites << Pet.find(pet)
     end
-    @applications_pending = pet_ids_to_objects(pet_plucker)
+    @applications_pending = Pet.with_application
   end
 
   def update
