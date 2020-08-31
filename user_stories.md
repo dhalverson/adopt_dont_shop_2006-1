@@ -242,7 +242,7 @@ I'm redirect back to the new application form to complete the necessary fields
 And I see a flash message indicating that I must complete the form in order to submit the application
 
 
-[ ] done
+[x] done
 
 User Story 18, List of Pets that have applications on them
 
