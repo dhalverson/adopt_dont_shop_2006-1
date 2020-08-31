@@ -160,7 +160,7 @@ And I can now see a link to favorite that pet
 And I also see that my favorites indicator has decremented by 1
 
 
-[ ] done
+[X] done
 
 User Story 13, Remove a Favorite from Favorites Page
 
@@ -174,7 +174,7 @@ And I'm redirected back to the favorites page where I no longer see that pet lis
 And I also see that the favorites indicator has decremented by 1
 
 
-[ ] done
+[X] done
 
 User Story 14, No Favorites Page
 
@@ -184,7 +184,7 @@ And I visit my favorites page ("/favorites")
 I see text saying that I have no favorited pets
 
 
-[ ] done
+[X] done
 
 User Story 15, Remove all Favorite from Favorites Page
 
@@ -201,7 +201,7 @@ Apply for Pet(s)
 Users will be able to submit an application for one ore more pets they they've favorited.
 
 
-[ ] done
+[X] done
 
 User Story 16, Applying for a Pet
 
@@ -224,7 +224,7 @@ I see a flash message indicating my application went through for the pets that w
 And I'm taken back to my favorites page where I no longer see the pets for which I just applied listed as favorites
 
 
-[ ] done
+[X] done
 
 User Story 17, Incomplete application for a Pet
 
