@@ -17,5 +17,12 @@ class Favorites
     @favorite_pets.map(&:to_i)
   end
 
+  def details
+    @favorite_pets.map{ |favorite| Pet.find(favorite) }
+  end
+
+  def to_adopt(pet_ids)
+    pet_ids.map{ |pet_id| Pet.find(pet_id) }
+  end
 
 end
