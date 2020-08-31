@@ -1,4 +1,7 @@
 <%= form_tag "/adoption_applications/new", method: :post do %>
+  <p><%= label_tag "Select the pet(s) you'd like to apply to adopt:" %> <br>
+  <%= select_tag "pet_ids[]", options_for_select(@favorites.collect{ |favorite| [favorite.name, favorite.id] }), multiple: :true %></p>
+  <br>
   <%= label_tag :name %>
   <%= text_field_tag :name%>
   <br>
