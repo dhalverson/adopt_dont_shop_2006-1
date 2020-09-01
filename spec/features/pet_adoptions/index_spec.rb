@@ -57,10 +57,11 @@ RSpec.describe "As a visitor", type: :feature do
 
     visit "/pets/#{@pet_1.id}"
     
-    expect(page).to have_link(@pet_1.adoption_applications.first.name)
-    click_link "#{@pet_1.adoption_applications.first.name}"
-    
-    expect(current_path).to eq("/applications/#{@pet_1.adoption_applications.first.id}")
+    within "#view_apps" do
+      click_link "View all applications for this pet"
+    end
+    expect(current_path).to eq("/pets/#{@pet_1.id}/pet_adoptions")
+    expect(page).to have_link("#{@pet_1.adoption_applications.first.name}")
     
   end
 end
