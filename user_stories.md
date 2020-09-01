@@ -253,7 +253,7 @@ I see a section on the page that has a list of all of the pets that have at leas
 Each pet's name is a link to their show page
 
 
-[ ] done
+[x] done
 
 User Story 19, Application Show Page
 

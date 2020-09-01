@@ -16,6 +16,10 @@ class AdoptionApplicationsController < ApplicationController
       redirect_to "/favorites"
     end
   end
+  
+  def show
+    @application = AdoptionApplication.find(params[:application_id])
+  end
 
 
 private
