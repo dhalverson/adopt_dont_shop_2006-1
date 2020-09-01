@@ -64,22 +64,3 @@ RSpec.describe "As a visitor", type: :feature do
     
   end
 end
-
-
-
-# User Story 20, Pet Applications Index Page
-#
-# As a visitor
-# When I visit a pets show page
-# I see a link to view all applications for this pet
-# When I click that link
-# I can see a list of all the names of applicants for this pet
-# Each applicant's name is a link to their application show page %>
-
-
-
-
-
-
-
-
