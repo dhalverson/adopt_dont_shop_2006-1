@@ -1,4 +1,9 @@
 <hr>
+<p>Current applicants for <%= "#{@pet.name}" %>:</p>
+<% @pet.adoption_applications.each do |applicant| %>
+  <p><%= link_to "#{applicant.name}", "/applications/#{applicant.id}" %></p>
+<% end %>
+<hr>
 <%= image_tag(@pet.image, alt: "pet picture", method: :get, class: 'pet-image') %>
 <p>Name: <%= link_to "#{@pet.name}", "/pets/#{@pet.id}" %></p>
 <p>Description: <%= @pet.description %></p>

@@ -270,7 +270,7 @@ I can see the following:
 - names of all pet's that this application is for (all names of pets should be links to their show page)
 
 
-[ ] done
+[x] done
 
 User Story 20, Pet Applications Index Page
 

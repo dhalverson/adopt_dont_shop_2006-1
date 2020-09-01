@@ -53,36 +53,14 @@ RSpec.describe "As a visitor", type: :feature do
                         adoption_application_id: @application_2.id)
   end
 
-  it "I can view an application's show page" do
+  it "I can access submitted applications for a pet from that pet's show page" do
+
+    visit "/pets/#{@pet_1.id}"
     
-    visit "/applications/#{@application_1.id}"
+    expect(page).to have_link(@pet_1.adoption_applications.first.name)
+    click_link "#{@pet_1.adoption_applications.first.name}"
     
-    expect(page).to have_content(@application_1.name)
-    expect(page).to have_content(@application_1.address)
-    expect(page).to have_content(@application_1.city)
-    expect(page).to have_content(@application_1.state)
-    expect(page).to have_content(@application_1.zip)
-    expect(page).to have_content(@application_1.phone)
-    expect(page).to have_link(@pet_1.name)
-    expect(page).to have_link(@pet_2.name)
+    expect(current_path).to eq("/applications/#{@pet_1.adoption_applications.first.id}")
     
-    click_link "#{@pet_2.name}"
-    
-    expect(current_path).to eq("/pets/#{@pet_2.id}")
-            
   end
 end
-
-# User Story 19, Application Show Page
-#
-# As a visitor
-# When I visit an applications show page "/applications/:id"
-# I can see the following:
-# - name
-# - address
-# - city
-# - state
-# - zip
-# - phone number
-# - Description of why the applicant says they'd be a good home for this pet(s)
-# - names of all pet's that this application is for (all names of pets should be links to their show page)
