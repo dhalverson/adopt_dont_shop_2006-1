@@ -53,7 +53,7 @@ RSpec.describe "As a visitor", type: :feature do
                         adoption_application_id: @application_2.id)
   end
 
-  it "I can submit an application to adopt pet(s) and they are stored to the database" do
+  it "I can view an application's show page" do
     
     visit "/applications/#{@application_1.id}"
     
