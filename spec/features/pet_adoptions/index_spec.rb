@@ -45,15 +45,17 @@ RSpec.describe "As a visitor", type: :feature do
       phone: "8675319",
       description: "I am a fantastic pet owner"
       )
+
+  end
+
+  it "I can access submitted applications for a pet from that pet's show page" do
+    
     PetAdoption.create!(pet_id: @pet_1.id,
                         adoption_application_id: @application_1.id)
     PetAdoption.create!(pet_id: @pet_2.id,
                         adoption_application_id: @application_1.id)
     PetAdoption.create!(pet_id: @pet_2.id,
                         adoption_application_id: @application_2.id)
-  end
-
-  it "I can access submitted applications for a pet from that pet's show page" do
 
     visit "/pets/#{@pet_1.id}"
     
@@ -64,4 +66,13 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_link("#{@pet_1.adoption_applications.first.name}")
     
   end
+  
+  it "I am given a message on the applications index showing there are no applicants if no one has applied for a specific pet" do
+
+    visit "/pets/#{@pet_1.id}/pet_adoptions"
+    
+    expect(page).to have_content("There are no applications for this pet yet...")
+    
+  end
+  
 end
