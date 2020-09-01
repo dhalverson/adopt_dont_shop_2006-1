@@ -1,17 +1,18 @@
 class PetsController < ApplicationController
-  
+
   def index
     @pets = Pet.all
   end
-  
+
   def show
     @pet = Pet.find(params[:id])
+    @pending_apps = PetAdoption.where(['pet_id = ? and status = ?', "#{@pet.id}", "Pending"])
   end
-  
+
   def new
     @shelter = Shelter.find(params[:id])
   end
-  
+
   def create
     shelter = Shelter.find(params[:id])
     new_pet = shelter.pets.create(pet_params)
@@ -24,11 +25,11 @@ class PetsController < ApplicationController
       # render :new
     end
   end
-  
+
   def edit
     @pet = Pet.find(params[:id])
   end
-  
+
   def update
     pet = Pet.find(params[:id])
     missing_fields = pet_params.select{|_,user_input| user_input.nil? || user_input == ""}.keys
@@ -40,7 +41,7 @@ class PetsController < ApplicationController
       # redirect_to "/pets/#{params[:id]}/edit"
     end
   end
-  
+
   def destroy
     pet = Pet.find(params[:id])
     if pet.status == "Pending"
@@ -52,9 +53,9 @@ class PetsController < ApplicationController
       redirect_to "/pets"
     end
   end
-  
+
   private
-  
+
   def pet_params
     params.permit(:image, :name, :description, :age, :sex, :status)
   end
