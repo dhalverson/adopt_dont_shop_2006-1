@@ -8,7 +8,11 @@
 <p>Description: <%= @pet.description %></p>
 <p>Approximate Age: <%= @pet.age %></p>
 <p>Sex: <%= @pet.sex %></p>
-<p>Adoption Status: <%= @pet.status %></p>
+<% if @pet.status == "Pending" %>
+  <p>Adoption Status: <%= @pet.status %> pending application by <%=  @pending_apps.first.adoption_application.name %> </p>
+<% else %>
+  <p>Adoption Status: <%= @pet.status %> </p>
+<% end %>
 <hr>
 <% if favorite_pets.favorited?(@pet.id) %>
   <p><%= link_to "Remove from Favorites", "/favorites/#{@pet.id}", method: :delete %></p>

@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get '/adoption_applications/new', to: 'adoption_applications#new'
   post '/adoption_applications/new', to: 'adoption_applications#create'
   get "/applications/:application_id", to: "adoption_applications#show"
-  
+
   get '/pets/:id/pet_adoptions', to: 'pet_adoptions#index'
-  
+  patch '/pets/:pet_id/pet_adoptions/:pet_adoption_id', to: 'pet_adoptions#update'
 end
