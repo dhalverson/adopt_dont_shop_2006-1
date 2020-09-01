@@ -1,0 +1,8 @@
+<% if @pet.adoption_applications.empty? %>
+  <p>There are no applications for this pet yet...</p>
+<% else %>
+  <p>Current applicants for <%= "#{@pet.name}" %>:</p>
+  <% @pet.adoption_applications.each do |applicant| %>
+    <p><%= link_to "#{applicant.name}", "/applications/#{applicant.id}" %></p>
+  <% end %>
+<% end %>

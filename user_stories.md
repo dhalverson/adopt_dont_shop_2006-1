@@ -282,7 +282,7 @@ I can see a list of all the names of applicants for this pet
 Each applicant's name is a link to their application show page
 
 
-[ ] done
+[x] done
 
 User Story 21, Pet Applications Index Page When No Applications
 
@@ -312,8 +312,9 @@ As a visitor
 When an application is made for more than one pet
 When I visit that applications show page
 I'm able to approve the application for any number of pets
-User Story 24, Pets can only have one approved application on them at any time
 
+
+User Story 24, Pets can only have one approved application on them at any time
 
 [ ] done
 
@@ -323,8 +324,8 @@ And one application has already been approved for them
 I can not approve any other applications for that pet but all other applications still remain on file (they can be seen on the pets application index page)
 (This can be done by either taking away the option to approve the application, or having a flash message pop up saying that no more applications can be approved for this pet at this time)
 
-User Story 25, Approved Applications can be revoked
 
+User Story 25, Approved Applications can be revoked
 
 [ ] done
 
@@ -339,7 +340,10 @@ And I can see the button to approve the application for that pet again
 When I go to that pets show page
 I can see that the pets adoption status is now back to adoptable
 And that pet is not on hold anymore
+
+
 Shelters
+
 
 Visitors will have additional constraints when manipulating shelter data in the database.
 
