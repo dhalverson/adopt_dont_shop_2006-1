@@ -21,8 +21,12 @@ class Favorites
     @favorite_pets.map{ |favorite| Pet.find(favorite) }
   end
 
-  def to_adopt(pet_ids)
-    pet_ids.map{ |pet_id| Pet.find(pet_id) }
-  end
+  # def pet_ids_to_objects
+  #   pet_plucker.map{ |pet_id| Pet.find(pet_id) }
+  # end
+  #
+  # def pet_plucker
+  #   PetAdoption.distinct.pluck(:pet_id)
+  # end
 
 end

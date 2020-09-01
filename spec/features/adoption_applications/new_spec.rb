@@ -64,9 +64,11 @@ RSpec.describe "As a visitor", type: :feature do
     click_button("Submit Application")
     expect(current_path).to eq("/favorites")
     expect(page).to have_content("Application succesfully submitted for selected pets")
-
-    expect(page).to_not have_content("#{@pet_1.name}")
-    expect(page).to_not have_css("img[src*='https://allaboutshepherds.com/wp-content/uploads/2016/05/gsd-canoe.jpg']")
+    save_and_open_page
+    within ".Favorites" do
+      expect(page).to_not have_content("#{@pet_1.name}")
+      expect(page).to_not have_css("img[src*='https://allaboutshepherds.com/wp-content/uploads/2016/05/gsd-canoe.jpg']")
+    end
   end
 
   it "I fail to fill out all the information, I'm redirected back to the application form and see a flash message" do
