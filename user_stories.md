@@ -291,7 +291,7 @@ When I visit a pet applications index page for a pet that has no applications on
 I see a message saying that there are no applications for this pet yet
 
 
-[ ] done
+[x] done
 
 User Story 22, Approving an Application
 
@@ -304,7 +304,7 @@ And I see that the pets status has changed to 'pending'
 And I see text on the page that says who this pet is on hold for (Ex: "On hold for John Smith", given John Smith is the name on the application that was just accepted)
 
 
-[ ] done
+[x] done
 
 User Story 23, Users can get approved to adopt more than one pet
 
