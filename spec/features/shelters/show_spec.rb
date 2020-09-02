@@ -96,7 +96,7 @@ RSpec.describe "As a visitor", type: :feature do
   
   expect(page).to have_content("3")
   expect(page).to have_content("2")
-  expect(page).to have_content("2.7")
+  expect(page).to have_content("3")
 
   end
 end
