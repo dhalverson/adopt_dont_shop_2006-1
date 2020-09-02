@@ -112,6 +112,8 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_content("Age: 2")
     expect(page).to have_content("Sex: Male")
     expect(page).to have_content("Description: Pet with updated information")
+    expect(page).to have_content("This shelter has been updated...")
+    
   end
   
 end

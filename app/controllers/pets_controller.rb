@@ -22,7 +22,7 @@ class PetsController < ApplicationController
     new_pet = shelter.pets.create(pet_params)
     if new_pet.valid?
       new_pet.save
-      # flash[:success] = "#{@new_shelter.name} has been created..."
+      flash[:success] = "A new shelter has been created..."
       redirect_to "/shelters/#{shelter.id}/pets"
     else
       # flash[:error] = "#{@new_shelter.name} was not created due to missing information..."
@@ -38,6 +38,7 @@ class PetsController < ApplicationController
     pet = Pet.find(params[:id])
     missing_fields = pet_params.select{|_,user_input| user_input.nil? || user_input == ""}.keys
     if missing_fields.empty?
+      flash[:success] = "This shelter has been updated..."
       pet.update(pet_params)
       redirect_to "/pets/#{params[:id]}"
     else
