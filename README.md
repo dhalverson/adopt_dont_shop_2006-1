@@ -4,7 +4,7 @@
 
 This project built off of Garrett's solo project repo from week 1 of Module 2, Adopt Don't Shop.
 
-### Project Requirements
+## Project Requirements
 
 Requirements included the use of:
 - Rails 5.2.4.3
@@ -23,11 +23,31 @@ Requirements included the use of:
 
   The Favorites page will show any favorites that you have selected for your session, and allow you to submit an application for them using the "Adopt My Favorites" link. This link will take you to a form to submit an application, which can be approved or revoked at a later point.
   
- ### Learning Goals
+ ## Learning Goals
  
  Some learning/growth goals for this project were:
+ 
+ ### Rails
+ - Follow MVC and RESTful convention to organize code and logic effectively
+ - Use PORO's for objects not stored in our Database
+ - Effective use of Flash messages to alert the user to conditions
+ 
+ ### Active Record
+ - Use Active Record methods over Ruby for our logic
+ 
+ ### Rspec
+ - Built complete testing to ensure our application functions correctly
+ - Test both models and features of our application
+ - Understand Capybara and Shoulda-matchers testing syntax
+ 
+## Challenges
+- Interacting with many to many relationships and joins tables
+- MVC convention and handling logic correctly
+- Active Record and Rails syntax and "magic"
+- Rspec testing and Shoulda-matchers syntax
+- Finding, selecting, and matching objects and ID's across tables and actions
 
-### Built With
+## Built With
 
 - Rails 5.2.4.3
 - PostgreSQL
