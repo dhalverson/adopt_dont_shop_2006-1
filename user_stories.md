@@ -347,7 +347,7 @@ Shelters
 
 Visitors will have additional constraints when manipulating shelter data in the database.
 
-[ ] done
+[x] done
 
 User Story 26, Shelters with Pets that have pending status cannot be Deleted
 
@@ -357,7 +357,9 @@ I can not delete that shelter
 Either:
 - there is no button visible for me to delete the shelter
 - if I click on the delete link for deleting a shelter, I see a flash message indicating that the shelter can not be deleted.
-[ ] done
+
+
+[x] done
 
 User Story 27, Shelters can be Deleted as long as all pets do not have approved applications on them
 
@@ -366,7 +368,9 @@ If a shelter doesn't have any pets with a pending status
 I can delete that shelter
 When that shelter is deleted
 Then all of their pets are deleted as well
-[ ] done
+
+
+[x] done
 
 User Story 28, Deleting Shelters Deletes its Reviews
 
