@@ -55,7 +55,7 @@ RSpec.describe "As a visitor", type: :feature do
     fill_in 'Zip', with: '80423'
 
     click_button("Create Shelter")
-    expect(page).to have_content("Error: Please enter the following information and resubmit: {"city"=>"", "state"=>""}")
+    expect(page).to have_content("Error: Please enter the following information and resubmit:")
     expect(current_path).to eq("/shelters/new")
   end
 
@@ -67,10 +67,13 @@ RSpec.describe "As a visitor", type: :feature do
 
     fill_in 'Name', with: 'The New Shelter'
     fill_in 'Address', with: '12 Main St.'
+    fill_in 'City', with: ''
+    fill_in 'State', with: ''
     fill_in 'Zip', with: '80423'
 
     click_button("Update Shelter")
-    expect(page).to have_content("Error: Please enter the following information and resubmit: {"city"=>"", "state"=>""}")
+    save_and_open_page
+    expect(page).to have_content("Error: Please enter the following information and resubmit:")
     expect(current_path).to eq("/shelters/#{@shelter_1.id}")
   end
 end
