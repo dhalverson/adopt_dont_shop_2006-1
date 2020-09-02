@@ -20,13 +20,11 @@ class PetsController < ApplicationController
   def create
     shelter = Shelter.find(params[:id])
     new_pet = shelter.pets.create(pet_params)
-    if new_pet.valid?
-      new_pet.save
-      flash[:success] = "A new shelter has been created..."
-      redirect_to "/shelters/#{shelter.id}/pets"
-    else
-      # flash[:error] = "#{@new_shelter.name} was not created due to missing information..."
-      # render :new
+      if new_pet.valid?
+        new_pet.save
+        flash[:success] = "A new shelter has been created..."
+        redirect_to "/shelters/#{shelter.id}/pets"
+      else
     end
   end
 
@@ -50,7 +48,7 @@ class PetsController < ApplicationController
   def destroy
     pet = Pet.find(params[:id])
     if pet.status == "Pending"
-      flash[:error] = "Unable to delete #{pet.name} because it has an approved application"
+      flash[:error] = "Unable to delete this pet because it has an approved application"
       redirect_to "/pets/#{pet.id}"
     else
       session[:favorites].delete(params[:id]) if !session[:favorites].nil?
