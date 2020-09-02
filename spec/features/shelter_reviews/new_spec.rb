@@ -69,7 +69,6 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to have_content("Review string")
     expect(page).to have_content("Review rating")
     expect(page).to have_content("Review content")
-    save_and_open_page
     expect(page).to have_css("img[src*='https://innovationlabs.harvard.edu/wp-content/uploads/sites/5/2018/08/Coming-soon-stamp-300x150.jpg']")
   end
 end
