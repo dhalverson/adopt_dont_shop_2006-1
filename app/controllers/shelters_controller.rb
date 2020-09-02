@@ -14,13 +14,12 @@ class SheltersController < ApplicationController
   
   def create
     @new_shelter = Shelter.new(shelter_params)
-    if @new_shelter.valid?
-      @new_shelter.save
-      # flash[:success] = "#{@new_shelter.name} has been created..."
+    if @new_shelter.save
+      flash[:success] = "#{@new_shelter.name} has been created..."
       redirect_to "/shelters"
     else
-      # flash[:error] = "#{@new_shelter.name} was not created due to missing information..."
-      # render :new
+      flash[:error] = "Error: Please enter the following information and resubmit: #{missing_information.each {|k,v| k}}"
+      redirect_to "/shelters/new"
     end
   end
   
@@ -35,7 +34,7 @@ class SheltersController < ApplicationController
       flash[:success] = "Information successfully updated."
       redirect_to "/shelters/#{@shelter.id}"
     else
-      flash[:error] = "Unable to save due to missing information."
+      flash[:error] = "Error: Please enter the following information and resubmit: #{missing_information.each {|k,v| k}}"
       redirect_to "/shelters/#{@shelter.id}"
     end
   end
@@ -43,7 +42,7 @@ class SheltersController < ApplicationController
   def destroy
     @shelter = Shelter.find(params[:id])
     if pending_pets?
-      flash[:error] = "Can't delete #{@shelter.name}, it has pending pet applications..."
+      flash[:error] = "Shelter cannot be deleted due to pending applications"
       redirect_to "/shelters/#{@shelter.id}"
     else
       Shelter.destroy(params[:id])
@@ -59,6 +58,10 @@ class SheltersController < ApplicationController
   
   def pending_pets?
     @shelter.pets.any? {|pet| pet.status == "Pending"}
+  end
+  
+  def missing_information
+    shelter_params.select {|key, value| value.nil? || value == ""}
   end
   
 end

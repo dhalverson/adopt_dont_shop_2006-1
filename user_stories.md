@@ -377,7 +377,9 @@ User Story 28, Deleting Shelters Deletes its Reviews
 As a visitor
 When I delete a shelter
 All reviews associated with that shelter are also deleted
-[ ] done
+
+
+[x] done
 
 User Story 29, Flash Messages for Shelter Create and Update
 
@@ -385,6 +387,8 @@ As a visitor
 When I am updating or creating a new shelter
 If I try to submit the form with incomplete information
 I see a flash message indicating which field(s) I am missing
+
+
 [ ] done
 
 User Story 30, Shelter Statistics
