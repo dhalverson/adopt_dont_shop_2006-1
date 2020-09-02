@@ -6,6 +6,9 @@ class SheltersController < ApplicationController
   
   def show
     @shelter = Shelter.find(params[:id])
+    @shelter_reviews = @shelter.shelter_reviews
+    @rating_array = (@shelter_reviews.map {|shelter| shelter.rating.to_i})
+    @rating = @rating_array.sum(0.0) / @rating_array.size
   end
   
   def new

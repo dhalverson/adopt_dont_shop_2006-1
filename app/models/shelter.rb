@@ -7,4 +7,8 @@ class Shelter < ApplicationRecord
                         :city,
                         :state,
                         :zip
+                        
+  def total_applications
+    PetAdoption.joins(:pet).where('pets.shelter_id = ?', id).count
+  end
 end

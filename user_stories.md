@@ -327,7 +327,7 @@ I can not approve any other applications for that pet but all other applications
 
 User Story 25, Approved Applications can be revoked
 
-[ ] done
+[x] done
 
 As a visitor
 After an application has been approved for a pet
@@ -399,6 +399,8 @@ I see statistics for that shelter, including:
 - count of pets that are at that shelter
 - average shelter review rating
 - number of applications on file for that shelter
+
+
 Pet
 
 Visitors will have additional constraints when manipulating pet data in the database.
