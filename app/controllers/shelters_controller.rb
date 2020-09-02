@@ -14,13 +14,12 @@ class SheltersController < ApplicationController
   
   def create
     @new_shelter = Shelter.new(shelter_params)
-    if @new_shelter.valid?
-      @new_shelter.save
+    if @new_shelter.save
       flash[:success] = "#{@new_shelter.name} has been created..."
       redirect_to "/shelters"
     else
       flash[:error] = "Error: Please enter the following information and resubmit: #{missing_information.each {|k,v| k}}"
-      render :new
+      redirect_to "/shelters/new"
     end
   end
   
@@ -29,7 +28,6 @@ class SheltersController < ApplicationController
   end
   
   def update
-    missing_information
     @shelter = Shelter.find(params[:id])
     @shelter.update(shelter_params)
     if @shelter.save
