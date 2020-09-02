@@ -6,7 +6,6 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
-    require "pry"; binding.pry
     if @pet.status == "Pending"
       @applications = PetAdoption.where(['pet_id = ? and status = ?', "#{@pet.id}", "Pending"])
     else
