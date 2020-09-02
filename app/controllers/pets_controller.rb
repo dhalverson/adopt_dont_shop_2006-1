@@ -49,10 +49,10 @@ class PetsController < ApplicationController
   def destroy
     pet = Pet.find(params[:id])
     if pet.status == "Pending"
-      # flash[:notice] = "Unable to delete #{pet.name} because it has an approved application"
+      flash[:error] = "Unable to delete #{pet.name} because it has an approved application"
       redirect_to "/pets/#{pet.id}"
     else
-      # session[:favorites].delete(pet.id.to_s) if session[:favorites] != nil
+      session[:favorites].delete(params[:id]) if !session[:favorites].nil?
       Pet.destroy(params[:id])
       redirect_to "/pets"
     end

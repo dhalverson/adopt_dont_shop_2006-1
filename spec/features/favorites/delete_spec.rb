@@ -112,5 +112,31 @@ RSpec.describe "As a visitor", type: :feature do
       expect(page).to have_link("Favorites - 0")
     end
   end
+  
+  it "When i delete a pet it removes it from favorites" do
+
+    pet_2 = @shelter_1.pets.create!(
+              image: "https://i.pinimg.com/originals/ea/cd/6a/eacd6a5cbcf58c93fa4cfc4d83159896.jpg",
+              name: "Bruiser",
+              age: "2",
+              sex: "Male",
+              description: "He's a 185 pound lap dog!",
+              status: "Adoptable"
+              )
+
+    visit "/pets/#{@pet_1.id}"
+    expect(page).to have_link("Add to Favorites")
+    click_link("Add to Favorites")
+    within "navbar" do
+      expect(page).to have_link("Favorites - 1")
+    end
+    
+    click_link "Delete Pet"
+    
+    within "navbar" do
+      expect(page).to have_link("Favorites - 0")
+    end
+
+  end
 end
 
