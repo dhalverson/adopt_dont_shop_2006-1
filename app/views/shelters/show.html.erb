@@ -8,7 +8,7 @@
 <hr>
 <p>Number of applications on file  →→→→→  <%= @shelter.total_applications %></p>
 <p>Number of pets at this shelter  →→→→→  <%= @shelter.pets.count %></p>
-<p>Average shelter review rating   →→→→→  <%= @rating.round(1) %></p>
+<p>Average shelter review rating   →→→→→  <%= @rating %></p>
 <hr>
 <h2>Reviews:</h2>
 <% @shelter.shelter_reviews.each do |review|%>
