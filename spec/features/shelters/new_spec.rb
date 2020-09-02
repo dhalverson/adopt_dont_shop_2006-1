@@ -72,7 +72,7 @@ RSpec.describe "As a visitor", type: :feature do
     fill_in 'Zip', with: '80423'
 
     click_button("Update Shelter")
-    save_and_open_page
+
     expect(page).to have_content("Error: Please enter the following information and resubmit:")
     expect(current_path).to eq("/shelters/#{@shelter_1.id}")
   end
