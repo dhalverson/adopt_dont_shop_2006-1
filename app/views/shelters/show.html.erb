@@ -1,11 +1,15 @@
 <hr>
+
 <h1><%= link_to "#{@shelter.name}", "/shelters/#{@shelter.id}" %></h1>
 <p>Address: <%= @shelter.address %></p>
 <p>City: <%= @shelter.city %></p>
 <p>State: <%= @shelter.state %></p>
 <p>Zip: <%= @shelter.zip %></p>
 <hr>
-
+<p>Number of applications on file  →→→→→  <%= @shelter.total_applications %></p>
+<p>Number of pets at this shelter  →→→→→  <%= @shelter.pets.count %></p>
+<p>Average shelter review rating   →→→→→  <%= @rating.round(1) %></p>
+<hr>
 <h2>Reviews:</h2>
 <% @shelter.shelter_reviews.each do |review|%>
   <section id="review-<%=review.id%>">
