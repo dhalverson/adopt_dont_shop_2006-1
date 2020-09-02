@@ -425,7 +425,9 @@ As a visitor
 If I've added a pet to my favorites
 When I try to delete that pet from the database
 They are also removed from the favorites list
-[ ] done
+
+
+[x] done
 
 User Story 33, Flash Message for Pet Create and Update
 
@@ -439,7 +441,7 @@ Usability
 
 Visitors will have additional constraints when manipulating pet data in the database.
 
-[ ] done
+[x] done
 
 User Story 34, All Pet Names are links to that Pet's Show Page
 
@@ -460,6 +462,11 @@ User Story 36, All Applicant Names are links to that Applicant's application
 As a visitor
 Any time I see an applicant's name within this application
 It is a link to their application show page
+
+
+
+
+
 Extensions
 
 User Story 37, List of Pets with Approved Applications
@@ -471,7 +478,8 @@ After an application has been approved for one or more pets
 When I visit the favorites page
 I see a section on the page that has a list of all of the pets that have an approved application on them
 Each pet's name is a link to their show page
-[ ] done
+
+[x] done
 
 User Story 38, Reviews have a default picture
 
