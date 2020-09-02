@@ -6,7 +6,12 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
-    @pending_apps = PetAdoption.where(['pet_id = ? and status = ?', "#{@pet.id}", "Pending"])
+    require "pry"; binding.pry
+    if @pet.status == "Pending"
+      @applications = PetAdoption.where(['pet_id = ? and status = ?', "#{@pet.id}", "Pending"])
+    else
+      @applications = PetAdoption.where(['pet_id = ? and status = ?', "#{@pet.id}", "Adoptable"])
+    end
   end
 
   def new

@@ -9,7 +9,7 @@
 <p>Approximate Age: <%= @pet.age %></p>
 <p>Sex: <%= @pet.sex %></p>
 <% if @pet.status == "Pending" %>
-  <p>Adoption Status: <%= @pet.status %> pending application by <%=  @pending_apps.first.adoption_application.name %> </p>
+  <p>Adoption Status: <%= @pet.status %> application by <%=  @applications.first.adoption_application.name %> </p>
 <% else %>
   <p>Adoption Status: <%= @pet.status %> </p>
 <% end %>
