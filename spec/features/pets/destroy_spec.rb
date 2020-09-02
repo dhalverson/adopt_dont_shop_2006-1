@@ -89,4 +89,5 @@ RSpec.describe "As a visitor", type: :feature do
     expect(page).to_not have_content("Description: #{@pet_1.description}")
     expect(page).to_not have_content("Adoption Status: #{@pet_1.status}")
   end
+
 end

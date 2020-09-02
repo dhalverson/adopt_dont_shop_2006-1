@@ -16,9 +16,6 @@ class PetAdoptionsController < ApplicationController
       @pet_adoption.update(status: "Pending")
       @pet.update(status: "Pending")
       redirect_to "/pets/#{params[:pet_id]}"
-    else
-      flash[:error] = "Error, this pet has a pending application"
-      redirect_to "/applications/#{@pet_adoption.adoption_application_id}"
     end
   end
 
