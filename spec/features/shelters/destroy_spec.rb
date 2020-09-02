@@ -73,9 +73,18 @@ RSpec.describe "As a visitor", type: :feature do
   end
 
   it "A shelter with pending pets cannot be deleted" do
-
+    pet_1 = @shelter_1.pets.create!(
+              image: "https://allaboutshepherds.com/wp-content/uploads/2016/05/gsd-canoe.jpg",
+              name: "Bailey",
+              age: "3",
+              sex: "Female",
+              description: "She's a 85 pound lap dog!",
+              status: "Pending"
+              )
+              
     visit("/shelters/#{@shelter_1.id}")
     click_link("Delete Shelter")
     expect(page).to have_content("Shelter cannot be deleted due to pending applications")
+
   end
 end

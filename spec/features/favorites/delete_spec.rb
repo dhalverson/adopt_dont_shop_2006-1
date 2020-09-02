@@ -114,39 +114,3 @@ RSpec.describe "As a visitor", type: :feature do
   end
 end
 
-# User Story 15, Remove all Favorite from Favorites Page
-#
-# As a visitor
-# When I have added pets to my favorites list
-# And I visit my favorites page ("/favorites")
-# I see a link to remove all favorited pets
-# When I click that link
-# I'm redirected back to the favorites page
-# I see the text saying that I have no favorited pets
-# And the favorites indicator returns to 0
-
-
-# User Story 12, Can't Favorite a Pet More Than Once
-#
-# As a visitor
-# After I've favorited a pet
-# When I visit that pet's show page
-# I no longer see a link to favorite that pet
-# But I see a link to remove that pet from my favorites
-# When I click that link
-# A delete request is sent to "/favorites/:pet_id"
-# And I'm redirected back to that pets show page where I can see a flash message indicating that the pet was removed from my favorites
-# And I can now see a link to favorite that pet
-# And I also see that my favorites indicator has decremented by 1
-
-
-# User Story 13, Remove a Favorite from Favorites Page
-#
-# As a visitor
-# When I have added pets to my favorites list
-# And I visit my favorites page ("/favorites")
-# Next to each pet, I see a button or link to remove that pet from my favorites
-# When I click on that button or link to remove a favorite
-# A delete request is sent to "/favorites/:pet_id"
-# And I'm redirected back to the favorites page where I no longer see that pet listed
-# And I also see that the favorites indicator has decremented by 1

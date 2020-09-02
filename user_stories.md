@@ -377,6 +377,7 @@ User Story 28, Deleting Shelters Deletes its Reviews
 As a visitor
 When I delete a shelter
 All reviews associated with that shelter are also deleted
+
 [ ] done
 
 User Story 29, Flash Messages for Shelter Create and Update
