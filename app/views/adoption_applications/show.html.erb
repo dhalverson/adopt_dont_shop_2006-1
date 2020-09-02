@@ -8,6 +8,10 @@
 <p>Phone: <%= @application.phone%></p>
 <p>Description: <%= @application.description %></p>
 <% @application.pet_adoptions.each do |app| %>
-  <section id="#{app.pet.id}"> <p> <%= link_to "Approve application for", "/pets/#{app.pet.id}/pet_adoptions/#{app.id}", method: :patch %> → <%= link_to "#{app.pet.name}", "/pets/#{app.pet.id}" %> </p></section>
+  <% if app.status == "Adoptable" %>
+    <p> <%= link_to "Approve application for", "/pets/#{app.pet.id}/pet_adoptions/#{app.id}", method: :patch %> → <%= link_to "#{app.pet.name}", "/pets/#{app.pet.id}" %> </p>
+  <% else %>
+    <p> <%= link_to "Revoke application for", "/pets/#{app.pet.id}/pet_adoptions/#{app.id}", method: :patch %> → <%= link_to "#{app.pet.name}", "/pets/#{app.pet.id}" %> </p>
+  <% end %>
 <% end %>
 <hr>

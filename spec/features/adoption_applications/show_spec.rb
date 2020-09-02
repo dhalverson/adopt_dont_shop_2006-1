@@ -50,7 +50,8 @@ RSpec.describe "As a visitor", type: :feature do
     PetAdoption.create!(pet_id: @pet_2.id,
                         adoption_application_id: @application_1.id)
     PetAdoption.create!(pet_id: @pet_2.id,
-                        adoption_application_id: @application_2.id)
+                        adoption_application_id: @application_2.id,
+                        status: "Pending")
   end
 
   it "I can view an application's show page" do
@@ -79,36 +80,46 @@ RSpec.describe "As a visitor", type: :feature do
     click_link("Approve application for", match: :first)
 
     expect(current_path).to eq("/pets/#{@pet_1.id}")
-    expect(page).to have_content("Pending")
-    expect(page).to have_content("pending application by #{@application_1.name}")
+    expect(page).to have_content("Pending application by #{@application_1.name}")
   end
 
+  it "More than one application cannot be approved for a pet" do
+
+    visit "/pets/#{@pet_2.id}"
+
+    visit "/applications/#{@application_1.id}"
+    expect(page).to_not have_link("Revoke application for")
+    click_link("Approve application for", match: :first)
+    expect(page).to have_content("Adoption Status: Pending")
+
+    visit "/applications/#{@application_1.id}"
+    expect(page).to have_link("Revoke application for")
+
+    click_link("Revoke application for", match: :first)
+    expect(current_path).to eq("/applications/#{@application_1.id}")
+    expect(page).to_not have_link("Revoke application for")
+
+    visit "/pets/#{@pet_2.id}"
+    expect(page).to_not have_content("Adoption Status: Pending")
+  end
 end
 
-# User Story 22, Approving an Application
-
-# User Story 22
+# User Story 25
 # As a visitor
-# When I visit an application's show page
-# For every pet that the application is for, I see a link to approve the application for that specific pet
-# When I click on a link to approve the application for one particular pet
-# I'm taken back to that pet's show page
-# And I see that the pets status has changed to 'pending'
-# And I see text on the page that says who this pet is on hold for (Ex: "On hold for John Smith", given John Smith is the name on the application that was just accepted)
+# After an application has been approved for a pet
+# When I visit that applications show page
+# I no longer see a link to approve the application for that pet
+# But I see a link to unapprove the application for that pet
+# When I click on the link to unapprove the application
+# I'm taken back to that applications show page
+# And I can see the button to approve the application for that pet again
+# When I go to that pets show page
+# I can see that the pets adoption status is now back to adoptable
+# And that pet is not on hold anymore
 
 
-
-
-# User Story 19, Application Show Page
-#
 # As a visitor
-# When I visit an applications show page "/applications/:id"
-# I can see the following:
-# - name
-# - address
-# - city
-# - state
-# - zip
-# - phone number
-# - Description of why the applicant says they'd be a good home for this pet(s)
-# - names of all pet's that this application is for (all names of pets should be links to their show page)
+# When a pet has more than one application made for them
+# And one application has already been approved for them
+# I can not approve any other applications for that pet but all other applications still remain on file (they can be seen on the pets application index page)
+# (This can be done by either taking away the option to approve the application, or having a flash message pop up saying that no more applications can be approved for this pet at this time)
