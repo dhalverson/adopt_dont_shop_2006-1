@@ -50,4 +50,26 @@ RSpec.describe "As a visitor", type: :feature do
 
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/reviews/new")
   end
+  
+  it "If I do not supply an image I get a image placeholder" do
+
+    visit "/shelters/#{@shelter_1.id}"
+
+    click_on "New Review"
+
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/reviews/new")
+
+    fill_in 'Title', with: "Review string"
+    fill_in 'Rating', with: "Review rating"
+    fill_in 'Content', with: "Review content"
+
+    click_on "Create Review"
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}")
+
+    expect(page).to have_content("Review string")
+    expect(page).to have_content("Review rating")
+    expect(page).to have_content("Review content")
+    save_and_open_page
+    expect(page).to have_css("img[src*='https://innovationlabs.harvard.edu/wp-content/uploads/sites/5/2018/08/Coming-soon-stamp-300x150.jpg']")
+  end
 end
