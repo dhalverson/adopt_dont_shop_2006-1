@@ -448,14 +448,15 @@ User Story 34, All Pet Names are links to that Pet's Show Page
 As a visitor
 Any time I see a pet's name within this application
 It is a link to their show page
-[ ] done
+[x] done
 
 User Story 35, All Shelter Names are links to that Shelter's Show Page
 
 As a visitor
 Any time I see a shelter's name within this application
 It is a link to their show page
-[ ] done
+
+[x] done
 
 User Story 36, All Applicant Names are links to that Applicant's application
 
