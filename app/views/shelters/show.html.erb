@@ -13,7 +13,11 @@
 <h2>Reviews:</h2>
 <% @shelter.shelter_reviews.each do |review|%>
   <section id="review-<%=review.id%>">
-    <img src= <%=review.image %>>
+    <% if review.image == "" %>
+      <img src= <%= "https://innovationlabs.harvard.edu/wp-content/uploads/sites/5/2018/08/Coming-soon-stamp-300x150.jpg" %>>
+    <% else %>
+      <img src= <%=review.image %>>
+    <% end %>
     <p>Title: <%= review.title %></p>
     <p>Rating: <%= review.rating %></p>
     <p>Content: <%= review.content %></p
