@@ -405,7 +405,7 @@ Pet
 
 Visitors will have additional constraints when manipulating pet data in the database.
 
-[ ] done
+[x] done
 
 User Story 31, Pets with approved applications cannot be deleted
 
@@ -415,7 +415,9 @@ I can not delete that pet
 Either:
 - there is no button visible for me to delete the pet
 - if I click on the delete button, I see a flash message indicating that the pet can not be deleted.
-[ ] done
+
+
+[x] done
 
 User Story 32, Deleting a pet removes it from favorites
 

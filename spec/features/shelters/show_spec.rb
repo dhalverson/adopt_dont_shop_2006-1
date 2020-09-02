@@ -93,7 +93,6 @@ RSpec.describe "As a visitor", type: :feature do
   it "When I visit /shelters/:id I see some statistics pertaining to this shelter" do
     
   visit "/shelters/#{@shelter_1.id}"
-  save_and_open_page
   
   expect(page).to have_content("3")
   expect(page).to have_content("2")

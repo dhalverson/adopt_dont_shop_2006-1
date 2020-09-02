@@ -77,11 +77,29 @@ RSpec.describe "As a visitor", type: :feature do
 
   it "I am not able to approve an application for a pet with an existig approved application" do
 
-  PetAdoption.create!(pet_id: @pet_1.id,
+    shelter_1 = Shelter.create({
+            name: "Primary Shelter",
+            address: "123 Maple Ave.",
+            city: "Denver",
+            state: "CO",
+            zip: "80438"
+            })
+
+    pet_1 = shelter_1.pets.create!(
+              image: "https://allaboutshepherds.com/wp-content/uploads/2016/05/gsd-canoe.jpg",
+              name: "Bailey",
+              age: "3",
+              sex: "Female",
+              description: "She's a 85 pound lap dog!",
+              status: "Adoptable"
+              )
+
+  PetAdoption.create!(pet_id: pet_1.id,
                       adoption_application_id: @application_1.id,
                       status: "Pending")
-  PetAdoption.create!(pet_id: @pet_1.id,
-                      adoption_application_id: @application_2.id)
+  
+                      
+                      
 
   visit("/applications/#{@application_1.id}")
   end
