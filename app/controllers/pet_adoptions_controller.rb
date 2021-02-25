@@ -18,5 +18,4 @@ class PetAdoptionsController < ApplicationController
       redirect_to "/pets/#{params[:pet_id]}"
     end
   end
-
 end

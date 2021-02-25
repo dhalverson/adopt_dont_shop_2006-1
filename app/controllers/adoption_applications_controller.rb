@@ -21,8 +21,7 @@ class AdoptionApplicationsController < ApplicationController
     @application = AdoptionApplication.find(params[:application_id])
   end
 
-
-private
+  private
 
   def application_params
     params.permit(:name, :address, :city, :state, :zip, :phone, :description)
@@ -46,5 +45,4 @@ private
       PetAdoption.create(pet_id: pet_id, adoption_application_id: adoption_application.id)
     end
   end
-
 end

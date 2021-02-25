@@ -39,7 +39,7 @@ class ShelterReviewsController < ApplicationController
     redirect_to "/shelters/#{params[:shelter_id]}"
   end
 
-private
+  private
 
   def review_params
     params.permit(:title, :rating, :content, :image)

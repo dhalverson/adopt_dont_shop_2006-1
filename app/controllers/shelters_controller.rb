@@ -12,7 +12,6 @@ class SheltersController < ApplicationController
   end
   
   def new
-    
   end
   
   def create
@@ -66,5 +65,4 @@ class SheltersController < ApplicationController
   def missing_information
     shelter_params.select {|key, value| value.nil? || value == ""}
   end
-  
 end
